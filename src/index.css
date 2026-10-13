@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-100 text-slate-800 antialiased;
+}
+
+/* ------------------------------------------------------------------ */
+/* Org chart (top-down, wraps at max N cards per row)                  */
+/* Connector lines are drawn by an SVG overlay (see OrgChart.tsx).     */
+/* ------------------------------------------------------------------ */
+.oc-canvas {
+  position: relative;
+  display: inline-block;
+}
+
+.oc-links {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.oc-branch {
+  position: relative;
+  z-index: 1;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Principal card + assistant(s) in a row. A hidden mirror spacer on the left
+   keeps the principal centered (children/UPT stay straight below it) while the
+   assistant is in flow so it pushes siblings aside (no overlap). */
+.oc-head {
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+}
+
+.oc-assistant-ghost {
+  width: 14rem;
+  margin-right: 44px;
+  visibility: hidden;
+}
+
+.oc-assistant {
+  margin-top: 5rem;
+  margin-left: 44px;
+}
+
+/* children extend horizontally to the side (not stacked downward) */
+.oc-children {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 34px;
+}
+
+.oc-cell {
+  display: flex;
+  padding: 0 8px;
+}
+
+/* thin scrollbars */
+.scroll-thin::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.scroll-thin::-webkit-scrollbar-thumb {
+  @apply rounded bg-slate-300;
+}
+.scroll-thin::-webkit-scrollbar-track {
+  background: transparent;
+}

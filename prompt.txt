@@ -1,0 +1,4 @@
+Lakukan hal berikut
+1. Pada tab Data Formasi hapus filter eselon ganti dengan filter jenjang, tambahkan juga filter jenjang di tab Data Pegawai dan Bagan Organisasi
+2. Pada pivot data tambahakan untuk melakukan pivot berdasarkan jenis pegawai
+3. Pada tab status fungsional tambahkan tombol save untuk menganti database di status-fungsional.json
