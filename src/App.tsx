@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
 import { BulkForm } from './components/BulkForm'
 import { DataExplorer } from './components/DataExplorer'
@@ -61,6 +61,15 @@ function Shell() {
   }, [rows])
 
   const selected = tree && selectedId ? findNode(tree, selectedId) : null
+
+  // Prevent background scroll when the mobile bottom-sheet detail is open.
+  useEffect(() => {
+    if (showDetail && selected) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = ''
+    }
+  }, [showDetail, selected])
 
   if (!ready) {
     return (
@@ -139,27 +148,38 @@ function Shell() {
               )}
             </aside>
 
-            {/* Mobile bottom sheet for node detail. */}
+            {/* Mobile bottom sheet for node detail with backdrop overlay. */}
             {showDetail && selected && (
-              <div className="lg:hidden fixed inset-x-0 bottom-0 z-[60] bg-white border-t border-slate-200 shadow-2xl transform transition-transform duration-300 ease-in-out translate-y-0 max-h-[75vh] flex flex-col">
-                <div className="flex items-center justify-between px-4 py-2 border-b border-slate-200 shrink-0">
-                  <h2 className="font-medium text-sm">Detail Node</h2>
-                  <button
-                    type="button"
-                    onClick={() => {
-                      setShowDetail(false)
-                      setSelectedId(null)
-                    }}
-                    className="text-slate-500 hover:text-slate-700"
-                    aria-label="Tutup detail"
-                  >
-                    ✕
-                  </button>
+              <>
+                {/* Backdrop: tap to close */}
+                <div
+                  className="lg:hidden fixed inset-0 z-[50] bg-black/40 backdrop-blur-sm"
+                  onClick={() => {
+                    setShowDetail(false)
+                    setSelectedId(null)
+                  }}
+                  aria-hidden="true"
+                />
+                <div className="lg:hidden fixed inset-x-0 bottom-0 z-[60] bg-white border-t border-slate-200 shadow-2xl transform transition-transform duration-300 ease-in-out translate-y-0 max-h-[85vh] w-full flex flex-col">
+                  <div className="flex items-center justify-between px-4 py-2 border-b border-slate-200 shrink-0">
+                    <h2 className="font-medium text-sm">Detail Node</h2>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setShowDetail(false)
+                        setSelectedId(null)
+                      }}
+                      className="text-slate-500 hover:text-slate-700"
+                      aria-label="Tutup detail"
+                    >
+                      ✕
+                    </button>
+                  </div>
+                  <div className="flex-1 overflow-y-auto p-4 w-full">
+                    <NodeDetail node={selected} />
+                  </div>
                 </div>
-                <div className="flex-1 overflow-y-auto p-4">
-                  <NodeDetail node={selected} />
-                </div>
-              </div>
+              </>
             )}
           </div>
         )}
