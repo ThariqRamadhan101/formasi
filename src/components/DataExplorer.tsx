@@ -29,7 +29,7 @@ const HEADERS = ['#', ...CSV_HEADERS, '']
 
 function csvCell(value: unknown): string {
   const text = String(value ?? '')
-  return /[",\n;]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text
+  return /[\",\n;]/.test(text) ? `"${text.replace(/\"/g, '""')}"` : text
 }
 
 function downloadCsv(rows: FormasiRow[]) {
@@ -145,9 +145,9 @@ export function DataExplorer() {
           value={search}
           onChange={(event) => setSearch(event.target.value)}
           placeholder="Cari jabatan / unit…"
-          className="w-56 rounded-md border border-slate-300 px-2.5 py-1.5 text-xs focus:border-brand-500 focus:outline-none"
+          className="w-full sm:w-56 rounded-md border border-slate-300 px-2.5 py-1.5 text-xs focus:border-brand-500 focus:outline-none"
         />
-        <select value={unit} onChange={(e) => setUnit(e.target.value)} className={`${selectClass} max-w-[16rem]`}>
+        <select value={unit} onChange={(e) => setUnit(e.target.value)} className={`${selectClass} max-w-full sm:max-w-[16rem]`}>
           <option value="">Semua unit kerja</option>
           {options.unitKerja.map((item) => (
             <option key={item} value={item}>
@@ -205,7 +205,7 @@ export function DataExplorer() {
         >
           ⬇ Download CSV
         </button>
-        <div className="ml-auto flex gap-4 text-xs text-slate-500">
+        <div className="ml-auto flex flex-wrap gap-4 text-xs text-slate-500">
           <span>
             Baris: <strong className="text-slate-800">{filtered.length.toLocaleString('id-ID')}</strong>
           </span>

@@ -83,3 +83,110 @@ body {
 .scroll-thin::-webkit-scrollbar-track {
   background: transparent;
 }
+
+/* ================================================================== */
+/* Mobile responsive styles                                            */
+/* ================================================================== */
+
+/* Hide scrollbar for tab navigation */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Mobile: Stack org chart vertically instead of horizontal */
+@media (max-width: 1023px) {
+  .oc-children {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 16px;
+  }
+  
+  .oc-cell {
+    padding: 8px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .oc-head {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .oc-assistant-ghost {
+    display: none;
+  }
+  
+  .oc-assistant {
+    margin-top: 1.5rem;
+    margin-left: 0;
+  }
+  
+  /* Reduce card width on mobile */
+  .oc-canvas [data-node-id] {
+    min-width: 200px;
+    max-width: 90vw;
+  }
+}
+
+/* Table responsive: allow horizontal scroll on mobile */
+@media (max-width: 767px) {
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Make filter controls stack on mobile */
+  .flex-wrap.gap-2 > * {
+    flex: 1 1 auto;
+    min-width: 140px;
+  }
+  
+  /* Stack form fields vertically on mobile */
+  .grid-cols-2,
+  .grid-cols-3,
+  .grid-cols-4 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Touch-friendly targets */
+@media (pointer: coarse) {
+  button,
+  select,
+  input[type="checkbox"],
+  input[type="radio"],
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .oc-branch [data-node-id] {
+    padding: 12px 16px;
+  }
+}
+
+/* Prevent zoom on iOS when focusing inputs */
+@media screen and (max-width: 767px) {
+  input[type="text"],
+  input[type="search"],
+  input[type="number"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Better tap highlight for mobile */
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure proper viewport */
+@viewport {
+  width: device-width;
+  zoom: 1;
+}

@@ -22,7 +22,7 @@ interface HeaderProps {
 
 function Stat({ label, value, tone }: { label: string; value: number | string; tone: string }) {
   return (
-    <div className="rounded-lg bg-white/10 px-3 py-1.5 text-center">
+    <div className="rounded-lg bg-white/10 px-3 py-1.5 text-center flex-shrink-0">
       <p className={`text-base font-bold leading-none ${tone}`}>
         {typeof value === 'number' ? value.toLocaleString('id-ID') : value}
       </p>
@@ -39,15 +39,15 @@ export function Header({ rows, generatedAt, rootLabel, tab, onTab }: HeaderProps
 
   return (
     <header className="z-20 bg-brand-800 text-white shadow-md">
-      <div className="flex flex-wrap items-center gap-4 px-5 py-3">
-        <div>
-          <h1 className="text-lg font-bold leading-tight">Bagan Formasi Unit Organisasi</h1>
-          <p className="text-[11px] text-brand-100">
+      <div className="flex flex-wrap items-center gap-4 px-4 py-3">
+        <div className="flex-1 min-w-[200px]">
+          <h1 className="text-lg font-bold leading-tight truncate">Bagan Formasi Unit Organisasi</h1>
+          <p className="text-[11px] text-brand-100 truncate">
             {rootLabel || 'Unit Organisasi'} · data per {new Date(generatedAt).toLocaleDateString('id-ID')}
           </p>
         </div>
 
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2 flex-shrink-0">
           <Stat label="Kebutuhan" value={kebutuhan} tone="text-white" />
           <Stat label="Bezetting" value={bezetting} tone="text-emerald-200" />
           <Stat label="Entri" value={rows.length} tone="text-brand-100" />
@@ -57,13 +57,15 @@ export function Header({ rows, generatedAt, rootLabel, tab, onTab }: HeaderProps
 
       </div>
 
-      <nav className="flex gap-1 px-4">
+      <nav className="flex gap-1 px-4 pb-3 overflow-x-auto scrollbar-hide -mx-4 px-4" role="tablist" aria-label="Navigasi tab utama">
         {TABS.map((item) => (
           <button
             key={item.id}
             type="button"
+            role="tab"
+            aria-selected={tab === item.id}
             onClick={() => onTab(item.id)}
-            className={`rounded-t-lg px-4 py-2 text-sm font-medium transition ${
+            className={`rounded-t-lg px-4 py-2 text-sm font-medium transition whitespace-nowrap flex-shrink-0 ${
               tab === item.id ? 'bg-slate-100 text-brand-800' : 'text-white/70 hover:bg-white/10'
             }`}
           >

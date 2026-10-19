@@ -28,6 +28,7 @@ function Shell() {
   const [jabatanFilter, setJabatanFilter] = useState('ALL')
   const [jenjangFilter, setJenjangFilter] = useState('ALL')
   const [kategoriFilter, setKategoriFilter] = useState<FungsionalCategory | 'ALL'>('ALL')
+  const [showDetail, setShowDetail] = useState(false)
 
   const fullTree = useMemo(() => (ready ? buildOrgTree(rows) : null), [ready, rows])
 
@@ -92,13 +93,16 @@ function Shell() {
 
       <main className="min-h-0 flex-1">
         {tab === 'chart' && (
-          <div className="flex h-full min-h-0">
-            <div className="min-w-0 flex-1 border-r border-slate-200 bg-white">
+          <div className="flex h-full min-h-0 flex-col lg:flex-row">
+            <div className="min-w-0 flex-1 lg:border-r lg:border-slate-200 bg-white">
               {tree ? (
                 <OrgChart
                   tree={tree}
                   selectedId={selectedId}
-                  onSelect={(node) => setSelectedId(node.id)}
+                  onSelect={(node) => {
+                    setSelectedId(node.id)
+                    setShowDetail(true)
+                  }}
                   query={query}
                   onQuery={setQuery}
                   formasiFilter={formasiFilter}
@@ -125,23 +129,47 @@ function Shell() {
                 </div>
               )}
             </div>
-            <aside className="w-80 shrink-0 bg-white xl:w-96">
-              <NodeDetail node={selected} />
+
+            {/* Desktop side panel (hidden on mobile). */}
+            <aside className="lg:block w-0 lg:w-80 shrink-0 bg-white border-l border-slate-200 overflow-hidden transition-all duration-200">
+              {showDetail && selected && (
+                <div className="h-full flex flex-col">
+                  <NodeDetail node={selected} />
+                </div>
+              )}
             </aside>
+
+            {/* Mobile bottom sheet for node detail. */}
+            {showDetail && selected && (
+              <div className="lg:hidden fixed inset-x-0 bottom-0 z-[60] bg-white border-t border-slate-200 shadow-2xl transform transition-transform duration-300 ease-in-out translate-y-0 max-h-[75vh] flex flex-col">
+                <div className="flex items-center justify-between px-4 py-2 border-b border-slate-200 shrink-0">
+                  <h2 className="font-medium text-sm">Detail Node</h2>
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowDetail(false)
+                      setSelectedId(null)
+                    }}
+                    className="text-slate-500 hover:text-slate-700"
+                    aria-label="Tutup detail"
+                  >
+                    ✕
+                  </button>
+                </div>
+                <div className="flex-1 overflow-y-auto p-4">
+                  <NodeDetail node={selected} />
+                </div>
+              </div>
+            )}
           </div>
         )}
 
-        {tab === 'data' && <DataExplorer />}
-
-        {tab === 'pegawai' && <DataPegawai />}
-
-        {tab === 'fungsional' && <StatusFungsional />}
-
-        {tab === 'pivot' && <PivotTable />}
-
-        {tab === 'input' && <BulkForm />}
-
-        {tab === 'opsi' && <OptionManager />}
+        {tab === 'data' && <div className="overflow-x-auto"><DataExplorer /></div>}
+        {tab === 'pegawai' && <div className="overflow-x-auto"><DataPegawai /></div>}
+        {tab === 'fungsional' && <div className="overflow-x-auto"><StatusFungsional /></div>}
+        {tab === 'pivot' && <div className="overflow-x-auto"><PivotTable /></div>}
+        {tab === 'input' && <div className="p-4 lg:p-6"><BulkForm /></div>}
+        {tab === 'opsi' && <div className="p-4 lg:p-6"><OptionManager /></div>}
       </main>
     </div>
   )
