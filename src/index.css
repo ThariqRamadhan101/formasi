@@ -153,6 +153,22 @@ body {
   }
 }
 
+/* Header: stats in 2-col grid on small mobile */
+@media (max-width: 479px) {
+  header .flex.flex-wrap.items-center.gap-2.flex-shrink-0 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    width: 100%;
+  }
+}
+
+/* Tab scroll indicator: show fade when tabs overflow */
+.tab-scroll-hint {
+  @apply absolute right-0 top-0 bottom-0 w-4 flex items-center pointer-events-none;
+  background: linear-gradient(to right, transparent, #1e3a5a);
+}
+
 /* Touch-friendly targets */
 @media (pointer: coarse) {
   button,
