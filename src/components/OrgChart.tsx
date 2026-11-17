@@ -335,6 +335,33 @@ export function OrgChart({
     setPanning(false)
   }
 
+  const onScrollTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    const el = scrollRef.current
+    if (!el) return
+    const t = event.touches[0]
+    dragState.current = { active: true, x: t.clientX, y: t.clientY, left: el.scrollLeft, top: el.scrollTop }
+    draggedRef.current = false
+  }
+
+  const onScrollTouchMove = (event: React.TouchEvent<HTMLDivElement>) => {
+    const el = scrollRef.current
+    if (!el || !dragState.current.active) return
+    const t = event.touches[0]
+    const dx = t.clientX - dragState.current.x
+    const dy = t.clientY - dragState.current.y
+    if (!draggedRef.current && Math.abs(dx) + Math.abs(dy) < 5) return
+    draggedRef.current = true
+    setPanning(true)
+    el.scrollLeft = dragState.current.left - dx
+    el.scrollTop = dragState.current.top - dy
+    event.preventDefault()
+  }
+
+  const onScrollTouchEnd = () => {
+    dragState.current.active = false
+    setPanning(false)
+  }
+
   const selectNode = (node: OrgNode) => {
     if (draggedRef.current) {
       draggedRef.current = false
@@ -567,6 +594,9 @@ export function OrgChart({
         onMouseMove={onScrollMouseMove}
         onMouseUp={endPan}
         onMouseLeave={endPan}
+        onTouchStart={onScrollTouchStart}
+        onTouchMove={onScrollTouchMove}
+        onTouchEnd={onScrollTouchEnd}
         className={`scroll-thin min-h-0 flex-1 select-none overflow-auto p-6 ${
           panning ? 'cursor-grabbing' : 'cursor-grab'
         }`}
