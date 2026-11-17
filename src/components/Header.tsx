@@ -86,7 +86,6 @@ export function Header({ rows, fungsionalStatus, generatedAt, rootLabel, tab, on
             <Stat label="Jabatan" value={jabatan} tone="text-white" />
           </div>
         </div>
-<<<<<<< HEAD
 
         <button
           type="button"
@@ -97,8 +96,6 @@ export function Header({ rows, fungsionalStatus, generatedAt, rootLabel, tab, on
         >
           {building ? '⏳ Membuat report…' : '📥 Unduh Report'}
         </button>
-=======
->>>>>>> d0cf1abfa79ec49793bd6f0b61deeeceffb6ebc7
       </div>
 
       {/* Tab navigation: horizontal scroll with visible indicator on mobile */}
