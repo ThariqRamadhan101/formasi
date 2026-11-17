@@ -103,6 +103,12 @@ III hijau muda, IV biru muda**.
   banyak field per area, banyak measure, header baris/kolom bertingkat + total, CSV.
 - **Filter kategori** — Bidang PU / Non Bidang PU / Bukan Fungsional di Bagan, Data Formasi,
   Data Pegawai, dan Pivot (daftar Bidang PU ada di `src/lib/fungsional.ts`).
+- **Unduh Report (Excel)** — tombol di pojok kanan atas header; menghasilkan satu berkas
+  `.xlsx` berisi **Tabel 1, Tabel 2, Lampiran I, Lampiran II, Lampiran III** mengikuti format
+  `Lampiran.xlsx` (K/B/F, split eselon III.a/III.b, JF Bidang PU vs Non Bidang PU, kolom jenjang,
+  blok detail per unit). Semua angka dihitung dari data saat ini (termasuk edit lokal +
+  status fungsional di localStorage); kolom **KI & TOTAL manual dari template tidak dipakai**
+  (tidak ada di data app). Pembuatnya di `src/lib/report.ts` (pustaka `exceljs`).
 - **Input Formasi** — satu jabatan diterapkan ke banyak target (unit → satuan → seksi).
 - **Pengaturan Opsi** — kelola daftar Unit/Satuan/Seksi/Jabatan/Jenjang (hierarkis per relasi).
 
@@ -168,10 +174,11 @@ src/
   lib/formasi.ts                # pembangun pohon + filter + lookups
   lib/fungsional.ts             # kategori Bidang PU / Non Bidang PU / Bukan Fungsional
   lib/pivot.ts                  # dimensi + measure + computePivot
+  lib/report.ts                 # generator report Excel (Lampiran I–III, pakai exceljs)
   lib/optionModel.ts            # model opsi hierarkis
   lib/store.tsx                 # state global + localStorage (+ status fungsional)
   components/
-    Header.tsx                  # judul + statistik + nav tab
+    Header.tsx                  # judul + statistik + tombol Unduh Report + nav tab
     OrgChart.tsx                # bagan organisasi (filter, zoom, drag)
     NodeDetail.tsx              # rincian unit + daftar pegawai
     DataExplorer.tsx            # tabel formasi + filter + edit + hapus + CSV

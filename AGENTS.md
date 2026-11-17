@@ -3,7 +3,8 @@
 ## What this is
 
 All source data lives in the `database/` folder — formasi from `FORMASI.csv` (primary),
-`formasi-master.json`, or `Formasi.xlsx` (fallback; **currently absent**), pegawai from
+`formasi-master.json`, or `Formasi.xlsx` (fallback; **currently absent** — the README still
+speaks as if this file were the primary source; trust the priority order below instead), pegawai from
 `DATA PEGAWAI.xlsx` (sheet `DATA PEGAWAI`, 7 kolom), plus `status-fungsional.json`
 (manual status registry, not derived). They feed a web app **generik** yang menampilkan
 formasi sebuah Unit Organisasi sebagai bagan organisasi. `extract_formasi.py` menggabungkan
@@ -31,7 +32,8 @@ npm.cmd run refresh                 # extract + build
   `--no-csv` / `--no-master`; create files with `--write-csv` / `--write-master`. The app reads
   `public/data/formasi.json`, `options.json`, and `fungsional-status.json` (copied from
   `database/status-fungsional.json`), not the sources.
-- Python extraction needs `pandas` + `openpyxl` (present on this machine; Python 3.13).
+- Python extraction needs `pandas` + `openpyxl` — already installed on this machine
+  (verified: Python 3.15.0, pandas 3.0.6, openpyxl 3.1.5); no venv or setup step.
 - **There is no test suite / test runner.** Verify with `npm.cmd run build` (tsc) + `lint`.
 
 ## Architecture (not obvious from filenames)
@@ -97,6 +99,19 @@ npm.cmd run refresh                 # extract + build
   plus Rows/Columns/Values/Filter areas, multiple fields per area, multiple measures, nested
   row/column headers with totals. `computePivot(rows, {rows, cols, values, filters})` is pure;
   `selectRows` applies filter fields. `PIVOT_DIMENSIONS` / `PIVOT_MEASURES` are the field lists.
+- `src/lib/report.ts` builds the "Lampiran" Excel report (sheets `Tabel 1`, `Tabel 2`,
+  `Lampiran I`, `Lampiran II`, `Lampiran III`, mirroring `Lampiran.xlsx`) with `exceljs`
+  from the live store `rows` + `fungsionalStatus`; the **📥 Unduh Report** button in
+  `Header.tsx` downloads it as `Lampiran_YYYY-MM-DD.xlsx`. K = kebutuhan, B = bezetting of
+  `formasi='YA'` rows, F = K−B; "Tidak Sesuai" = `TIDAK` rows (footnote counts their
+  pegawai); Lampiran I splits eselon III into III.a (central) / III.b (satellite) and
+  JF into Bidang PU / Non Bidang PU via `categoryOfJabatan`; the template's hand-typed
+  **KI / TOTAL** columns are deliberately omitted (not derivable from data). Tabel 2 groups
+  jabatan fungsional by status in **reversed** registry order (Ditetapkan MenPAN-RB →
+  Belum dibuka, jabatan A–Z inside each status); Lampiran II lists them **A–Z**.
+  `scripts/_check_report.mjs` regenerates the workbook through Vite SSR for diffing against
+  the template with openpyxl. `tsconfig.app.json` sets `allowSyntheticDefaultImports` for
+  the `import ExcelJS from 'exceljs'` CJS interop.
 - `OptionManager` also has **Export/Import database (JSON)** (`FormasiDatabase`: rows + model +
   `fungsionalStatus`) — the in-app editor for the JSON-master workflow.
 
@@ -117,3 +132,10 @@ npm.cmd run refresh                 # extract + build
   `noUnusedLocals`/`noUnusedParameters`; `npm.cmd run build` runs `tsc -b` first, so these
   fail the build even though `lint` may not catch them.
 - Vite uses a relative `base: './'`; JSON is fetched via `import.meta.env.BASE_URL` (`src/lib/data.ts`).
+- `tsc -b` only type-checks `src/` and `vite.config.ts` (the `include`s in `tsconfig.app.json`
+  / `tsconfig.node.json`) — `scripts/*.ts` is outside the build but still linted by `eslint .`.
+  `scripts/_check_cm.ts` is a one-off org-tree diagnostic (imports `src/lib/formasi.ts` with a
+  `.ts` extension); no npm script or TS runner is wired for it, so it never runs in build/lint
+  workflows on its own. `scripts/_check_report.mjs` (report-vs-template diagnostic, uses Vite's
+  `ssrLoadModule` + openpyxl externally) is plain ESM JavaScript — neither `tsc -b` nor
+  `eslint .` (which only matches `**/*.{ts,tsx}`) touches it.

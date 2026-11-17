@@ -1,4 +1,6 @@
-import type { FormasiRow } from '../lib/types'
+import { useState } from 'react'
+import type { FormasiRow, FungsionalStatusMap } from '../lib/types'
+import { buildReport } from '../lib/report'
 
 export type TabId = 'chart' | 'data' | 'pegawai' | 'fungsional' | 'pivot' | 'input' | 'opsi'
 
@@ -14,6 +16,7 @@ const TABS: { id: TabId; label: string }[] = [
 
 interface HeaderProps {
   rows: FormasiRow[]
+  fungsionalStatus: FungsionalStatusMap
   generatedAt: string
   rootLabel: string
   tab: TabId
@@ -31,11 +34,36 @@ function Stat({ label, value, tone }: { label: string; value: number | string; t
   )
 }
 
-export function Header({ rows, generatedAt, rootLabel, tab, onTab }: HeaderProps) {
+export function Header({ rows, fungsionalStatus, generatedAt, rootLabel, tab, onTab }: HeaderProps) {
+  const [building, setBuilding] = useState(false)
   const kebutuhan = rows.reduce((sum, row) => sum + row.kebutuhan, 0)
   const bezetting = rows.reduce((sum, row) => sum + (row.bezetting ?? 0), 0)
   const units = new Set(rows.map((row) => row.unitKerja).filter(Boolean)).size
   const jabatan = new Set(rows.map((row) => row.jabatan).filter(Boolean)).size
+
+  async function downloadReport() {
+    if (building) return
+    setBuilding(true)
+    try {
+      const buffer = await buildReport(rows, fungsionalStatus)
+      const blob = new Blob([buffer], {
+        type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+      })
+      const url = URL.createObjectURL(blob)
+      const anchor = document.createElement('a')
+      anchor.href = url
+      anchor.download = `Lampiran_${new Date().toISOString().slice(0, 10)}.xlsx`
+      document.body.appendChild(anchor)
+      anchor.click()
+      document.body.removeChild(anchor)
+      URL.revokeObjectURL(url)
+    } catch (error) {
+      console.error('Gagal membuat report', error)
+      alert(`Gagal membuat report: ${error instanceof Error ? error.message : String(error)}`)
+    } finally {
+      setBuilding(false)
+    }
+  }
 
   return (
     <header className="z-20 bg-brand-800 text-white shadow-md">
@@ -55,6 +83,15 @@ export function Header({ rows, generatedAt, rootLabel, tab, onTab }: HeaderProps
           <Stat label="Jabatan" value={jabatan} tone="text-white" />
         </div>
 
+        <button
+          type="button"
+          onClick={() => void downloadReport()}
+          disabled={building}
+          title="Unduh report Excel (Tabel 1, Tabel 2, Lampiran I–III) dari data saat ini"
+          className="ml-auto flex items-center gap-1.5 rounded-lg bg-white/15 px-3.5 py-2 text-sm font-semibold text-white transition hover:bg-white/25 disabled:cursor-wait disabled:opacity-70"
+        >
+          {building ? '⏳ Membuat report…' : '📥 Unduh Report'}
+        </button>
       </div>
 
       <nav className="flex gap-1 px-4">
