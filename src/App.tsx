@@ -38,7 +38,7 @@ function Centered({ children }: { children: ReactNode }) {
 }
 
 function Shell() {
-  const { ready, error, rows, generatedAt, formasiList, jenisJabatan } = useStore()
+  const { ready, error, rows, generatedAt, formasiList, jenisJabatan, fungsionalStatus } = useStore()
   const [tab, setTab] = useState<TabId>('chart')
   const [query, setQuery] = useState('')
   const [selectedId, setSelectedId] = useState<string | null>(null)
@@ -157,6 +157,7 @@ function Shell() {
     <div className="flex h-full flex-col">
       <Header
         rows={rows}
+        fungsionalStatus={fungsionalStatus}
         generatedAt={generatedAt}
         rootLabel={fullTree.label}
         tab={tab}

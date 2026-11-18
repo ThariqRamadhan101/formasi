@@ -29,7 +29,7 @@ const HEADERS = ['#', ...CSV_HEADERS, '']
 
 function csvCell(value: unknown): string {
   const text = String(value ?? '')
-  return /[\",\n;]/.test(text) ? `"${text.replace(/\"/g, '""')}"` : text
+  return /[",\n;]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text
 }
 
 function downloadCsv(rows: FormasiRow[]) {
