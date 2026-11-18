@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from 'react'
-import type { ReactNode } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import type { PointerEvent as ReactPointerEvent, ReactNode } from 'react'
 import { BulkForm } from './components/BulkForm'
 import { DataExplorer } from './components/DataExplorer'
 import { DataPegawai } from './components/DataPegawai'
@@ -13,6 +13,25 @@ import { applyRowFilter, buildOrgTree, findNode } from './lib/formasi'
 import { functionalCategory } from './lib/fungsional'
 import { StoreProvider, useStore } from './lib/store'
 import type { FormasiRow, FungsionalCategory } from './lib/types'
+
+const DETAIL_WIDTH_KEY = 'formasi-detail-width'
+const DETAIL_WIDTH_DEFAULT = 384
+const DETAIL_WIDTH_MIN = 320
+const DETAIL_WIDTH_MAX = 720
+
+function clampDetailWidth(width: number): number {
+  const viewportMax =
+    typeof window === 'undefined'
+      ? DETAIL_WIDTH_MAX
+      : Math.max(DETAIL_WIDTH_MIN, Math.min(DETAIL_WIDTH_MAX, window.innerWidth - 480))
+  return Math.min(viewportMax, Math.max(DETAIL_WIDTH_MIN, width))
+}
+
+function loadDetailWidth(): number {
+  if (typeof window === 'undefined') return DETAIL_WIDTH_DEFAULT
+  const stored = Number(window.localStorage.getItem(DETAIL_WIDTH_KEY))
+  return Number.isFinite(stored) && stored > 0 ? clampDetailWidth(stored) : DETAIL_WIDTH_DEFAULT
+}
 
 function Centered({ children }: { children: ReactNode }) {
   return <div className="flex h-full flex-col items-center justify-center gap-3 text-center">{children}</div>
@@ -29,6 +48,10 @@ function Shell() {
   const [jenjangFilter, setJenjangFilter] = useState('ALL')
   const [kategoriFilter, setKategoriFilter] = useState<FungsionalCategory | 'ALL'>('ALL')
   const [showDetail, setShowDetail] = useState(false)
+  const [detailWidth, setDetailWidth] = useState(loadDetailWidth)
+  const [resizing, setResizing] = useState(false)
+  const [sheetExpanded, setSheetExpanded] = useState(false)
+  const resizeStart = useRef<{ x: number; width: number } | null>(null)
 
   const fullTree = useMemo(() => (ready ? buildOrgTree(rows) : null), [ready, rows])
 
@@ -71,6 +94,46 @@ function Shell() {
     }
   }, [showDetail, selected])
 
+  // Track pointer movement while the desktop panel is being resized.
+  useEffect(() => {
+    if (!resizing) return
+    const handleMove = (event: PointerEvent) => {
+      const start = resizeStart.current
+      if (!start) return
+      setDetailWidth(clampDetailWidth(start.width + (start.x - event.clientX)))
+    }
+    const handleUp = () => {
+      resizeStart.current = null
+      setResizing(false)
+    }
+    window.addEventListener('pointermove', handleMove)
+    window.addEventListener('pointerup', handleUp)
+    window.addEventListener('pointercancel', handleUp)
+    return () => {
+      window.removeEventListener('pointermove', handleMove)
+      window.removeEventListener('pointerup', handleUp)
+      window.removeEventListener('pointercancel', handleUp)
+    }
+  }, [resizing])
+
+  // Remember the last width once dragging stops.
+  useEffect(() => {
+    if (!resizing) window.localStorage.setItem(DETAIL_WIDTH_KEY, String(detailWidth))
+  }, [detailWidth, resizing])
+
+  // Keep the panel inside the viewport when the window shrinks.
+  useEffect(() => {
+    const handleResize = () => setDetailWidth((width) => clampDetailWidth(width))
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  const startResize = (event: ReactPointerEvent<HTMLDivElement>) => {
+    event.preventDefault()
+    resizeStart.current = { x: event.clientX, width: detailWidth }
+    setResizing(true)
+  }
+
   if (!ready) {
     return (
       <Centered>
@@ -111,6 +174,7 @@ function Shell() {
                   onSelect={(node) => {
                     setSelectedId(node.id)
                     setShowDetail(true)
+                    setSheetExpanded(false)
                   }}
                   query={query}
                   onQuery={setQuery}
@@ -139,12 +203,40 @@ function Shell() {
               )}
             </div>
 
-            {/* Desktop side panel (hidden on mobile). */}
-            <aside className="lg:block w-0 lg:w-80 shrink-0 bg-white border-l border-slate-200 overflow-hidden transition-all duration-200">
+            {/* Desktop side panel (hidden on mobile), resizable via its left edge. */}
+            <aside
+              className={`relative hidden shrink-0 overflow-hidden border-l border-slate-200 bg-white lg:block ${
+                resizing ? '' : 'transition-[width] duration-200'
+              }`}
+              style={{ width: showDetail && selected ? detailWidth : 0 }}
+            >
               {showDetail && selected && (
-                <div className="h-full flex flex-col">
-                  <NodeDetail node={selected} />
-                </div>
+                <>
+                  <div
+                    role="separator"
+                    aria-orientation="vertical"
+                    aria-label="Atur lebar panel rincian"
+                    title="Tarik untuk mengatur lebar · klik dua kali untuk reset"
+                    tabIndex={0}
+                    onPointerDown={startResize}
+                    onDoubleClick={() => setDetailWidth(clampDetailWidth(DETAIL_WIDTH_DEFAULT))}
+                    onKeyDown={(event) => {
+                      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return
+                      event.preventDefault()
+                      setDetailWidth((width) =>
+                        clampDetailWidth(width + (event.key === 'ArrowLeft' ? 24 : -24)),
+                      )
+                    }}
+                    className={`absolute inset-y-0 left-0 z-10 w-1.5 cursor-col-resize touch-none outline-none ${
+                      resizing
+                        ? 'bg-brand-400'
+                        : 'bg-transparent hover:bg-brand-300 focus-visible:bg-brand-300'
+                    }`}
+                  />
+                  <div className="flex h-full flex-col">
+                    <NodeDetail node={selected} />
+                  </div>
+                </>
               )}
             </aside>
 
@@ -157,25 +249,41 @@ function Shell() {
                   onClick={() => {
                     setShowDetail(false)
                     setSelectedId(null)
+                    setSheetExpanded(false)
                   }}
                   aria-hidden="true"
                 />
-                <div className="lg:hidden fixed inset-x-0 bottom-0 z-[60] bg-white border-t border-slate-200 shadow-2xl transform transition-transform duration-300 ease-in-out translate-y-0 max-h-[85vh] w-full flex flex-col">
-                  <div className="flex items-center justify-between px-4 py-2 border-b border-slate-200 shrink-0">
-                    <h2 className="font-medium text-sm">Detail Node</h2>
-                    <button
-                      type="button"
-                      onClick={() => {
-                        setShowDetail(false)
-                        setSelectedId(null)
-                      }}
-                      className="text-slate-500 hover:text-slate-700"
-                      aria-label="Tutup detail"
-                    >
-                      ✕
-                    </button>
+                <div
+                  className={`lg:hidden fixed inset-x-0 bottom-0 z-[60] flex w-full translate-y-0 flex-col border-t border-slate-200 bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${
+                    sheetExpanded ? 'h-[100dvh]' : 'max-h-[92vh]'
+                  }`}
+                >
+                  <div className="flex shrink-0 items-center justify-between border-b border-slate-200 px-4 py-2">
+                    <h2 className="text-sm font-medium">Detail Node</h2>
+                    <div className="flex items-center gap-3">
+                      <button
+                        type="button"
+                        onClick={() => setSheetExpanded((value) => !value)}
+                        className="text-xs font-medium text-brand-600 hover:text-brand-700"
+                        aria-label={sheetExpanded ? 'Perkecil detail' : 'Perbesar detail'}
+                      >
+                        {sheetExpanded ? 'Perkecil' : 'Perbesar'}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setShowDetail(false)
+                          setSelectedId(null)
+                          setSheetExpanded(false)
+                        }}
+                        className="text-slate-500 hover:text-slate-700"
+                        aria-label="Tutup detail"
+                      >
+                        ✕
+                      </button>
+                    </div>
                   </div>
-                  <div className="flex-1 overflow-y-auto p-4 w-full">
+                  <div className="flex-1 w-full overflow-y-auto p-4">
                     <NodeDetail node={selected} />
                   </div>
                 </div>

@@ -24,6 +24,38 @@ export interface FormasiRow {
 
 export type NewFormasiRow = Omit<FormasiRow, 'id'>
 
+/** Employee plus the source row's placement, used in the grouped detail list. */
+export interface GroupedPegawai extends Pegawai {
+  location: string
+}
+
+/** Rows of one jabatan + jenjang that share the same `unit › satuan › seksi`. */
+export interface JabatanLocationGroup {
+  location: string
+  rows: FormasiRow[]
+  kebutuhan: number
+  bezetting: number
+  pegawai: GroupedPegawai[]
+}
+
+/** Rows with the same jabatan + jenjang, aggregated for the node detail list. */
+export interface JabatanGroup {
+  /** Stable key: jabatan + jenjang + jenisJabatan + formasi. */
+  key: string
+  jabatan: string
+  jenjang: string
+  /** Highest eselon in the group (only meaningful for structural rows). */
+  eselon: string
+  jenisJabatan: string
+  formasi: string
+  rows: FormasiRow[]
+  kebutuhan: number
+  bezetting: number
+  pegawai: GroupedPegawai[]
+  /** Per-location totals, in first-seen order. */
+  locations: JabatanLocationGroup[]
+}
+
 export interface FormasiSummary {
   rows: number
   kebutuhan: number

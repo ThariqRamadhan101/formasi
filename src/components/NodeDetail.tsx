@@ -1,5 +1,5 @@
 import { Fragment, useMemo, useState } from 'react'
-import { collectDescendantRows, kindLabel } from '../lib/formasi'
+import { collectDescendantRows, groupRowsByJabatan, kindLabel } from '../lib/formasi'
 import type { OrgNode } from '../lib/types'
 
 interface NodeDetailProps {
@@ -18,10 +18,20 @@ function isUnitLevel(node: OrgNode): boolean {
   return node.kind !== 'subunit' && node.kind !== 'seksi'
 }
 
+/** Drop the selected node's own label from a location path to keep it short. */
+function relativeLocation(nodeLabel: string, location: string): string {
+  if (!location) return ''
+  if (location === nodeLabel) return 'Unit ini'
+  const prefix = `${nodeLabel} › `
+  return location.startsWith(prefix) ? location.slice(prefix.length) : location
+}
+
 export function NodeDetail({ node }: NodeDetailProps) {
-  const [openRow, setOpenRow] = useState<number | null>(null)
+  const [openRow, setOpenRow] = useState<string | null>(null)
 
   const rows = useMemo(() => (node ? collectDescendantRows(node) : []), [node])
+  const groups = useMemo(() => groupRowsByJabatan(rows), [rows])
+  const jabatanCount = useMemo(() => new Set(rows.map((row) => row.jabatan)).size, [rows])
 
   const byJenis = useMemo(() => {
     const map = new Map<string, { count: number; kebutuhan: number; bezetting: number }>()
@@ -149,81 +159,113 @@ export function NodeDetail({ node }: NodeDetailProps) {
       )}
 
       <section className="mt-4">
-        <h3 className="text-xs font-semibold text-slate-500">Daftar jabatan ({rows.length})</h3>
+        <h3 className="text-xs font-semibold text-slate-500">
+          Daftar jabatan ({groups.length} kelompok)
+        </h3>
         <p className="mt-0.5 text-[11px] text-slate-400">
+          {rows.length} formasi · {jabatanCount} jabatan unik · per jenjang
+        </p>
+        <p className="text-[11px] text-slate-400">
           K = Kebutuhan · B = Bezetting · F = Formasi (Kebutuhan − Bezetting)
         </p>
         {unitLevel && (
-          <p className="text-[11px] text-slate-400">Klik jabatan untuk melihat siapa saja yang mengisinya.</p>
+          <p className="text-[11px] text-slate-400">
+            Klik jabatan untuk melihat rincian lokasi dan pegawai.
+          </p>
         )}
-        <div className="mt-2 overflow-hidden rounded-lg border border-slate-200">
-          <table className="w-full text-left text-[11px]">
+        <div className="scroll-thin mt-2 overflow-x-auto rounded-lg border border-slate-200">
+          <table className="w-full table-fixed text-left text-[11px]">
+            <colgroup>
+              <col />
+              <col className="w-20" />
+              <col className="w-9" />
+              {unitLevel && <col className="w-9" />}
+              {unitLevel && <col className="w-9" />}
+            </colgroup>
             <thead className="bg-slate-50 text-slate-500">
               <tr>
-                <th className="px-2 py-1 font-medium">Jabatan</th>
-                <th className="px-2 py-1 font-medium">Jenjang</th>
-                <th className="px-2 py-1 text-right font-medium" title="Kebutuhan">
+                <th className="px-1.5 py-1 font-medium">Jabatan</th>
+                <th className="px-1.5 py-1 font-medium">Jenjang</th>
+                <th className="px-1 py-1 text-right font-medium" title="Kebutuhan">
                   K
                 </th>
                 {unitLevel && (
-                  <th className="px-2 py-1 text-right font-medium" title="Bezetting">
+                  <th className="px-1 py-1 text-right font-medium" title="Bezetting">
                     B
                   </th>
                 )}
                 {unitLevel && (
-                  <th className="px-2 py-1 text-right font-medium" title="Formasi (Kebutuhan - Bezetting)">
+                  <th className="px-1 py-1 text-right font-medium" title="Formasi (Kebutuhan - Bezetting)">
                     F
                   </th>
                 )}
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
-              {rows.map((row) => {
-                const tidak = row.formasi === 'TIDAK'
-                const pegawai = row.pegawai ?? []
-                const open = openRow === row.id
+              {groups.map((group) => {
+                const tidak = group.formasi === 'TIDAK'
+                const open = openRow === group.key
+                const pegawai = group.pegawai
                 return (
-                  <Fragment key={row.id}>
+                  <Fragment key={group.key}>
                     <tr
-                      onClick={() => unitLevel && setOpenRow(open ? null : row.id)}
+                      onClick={() => unitLevel && setOpenRow(open ? null : group.key)}
                       className={`${unitLevel ? 'cursor-pointer ' : ''}${tidak ? 'bg-red-50' : 'hover:bg-slate-50'}`}
                     >
-                      <td className="px-2 py-1">
-                        <span className={`flex items-center gap-1 font-medium ${tidak ? 'text-red-700' : 'text-slate-700'}`}>
-                          {unitLevel && <span className="w-3 text-slate-400">{open ? '▾' : '▸'}</span>}
-                          {row.jabatan}
+                      <td className="px-1.5 py-1 align-top">
+                        <span className={`flex items-start gap-1 font-medium ${tidak ? 'text-red-700' : 'text-slate-700'}`}>
+                          {unitLevel && <span className="w-3 shrink-0 text-slate-400">{open ? '▾' : '▸'}</span>}
+                          <span className="min-w-0 break-words">{group.jabatan}</span>
                           {tidak && (
-                            <span className="rounded bg-red-600 px-1 py-0.5 text-[9px] font-bold uppercase text-white">
+                            <span className="shrink-0 rounded bg-red-600 px-1 py-0.5 text-[9px] font-bold uppercase text-white">
                               Tidak
                             </span>
                           )}
                         </span>
-                        <span className={`block text-[10px] text-slate-400 ${unitLevel ? 'ml-4' : ''}`}>
-                          {[row.unitKerja, row.satuanKerja, row.seksiKerja]
-                            .filter((value) => value && value !== '-')
-                            .join(' › ')}
-                        </span>
                       </td>
-                      <td className="px-2 py-1 text-slate-500">{row.jenjang === '-' ? '—' : row.jenjang}</td>
-                      <td className="px-2 py-1 text-right tabular-nums font-medium text-slate-700">{row.kebutuhan}</td>
+                      <td className="px-1.5 py-1 align-top text-slate-500">
+                        {group.jenjang === '-' ? '—' : group.jenjang}
+                      </td>
+                      <td className="whitespace-nowrap px-1 py-1 text-right align-top tabular-nums font-medium text-slate-700">
+                        {group.kebutuhan}
+                      </td>
                       {unitLevel && (
-                        <td className="px-2 py-1 text-right tabular-nums font-medium text-emerald-700">
-                          {row.bezetting ?? 0}
+                        <td className="whitespace-nowrap px-1 py-1 text-right align-top tabular-nums font-medium text-emerald-700">
+                          {group.bezetting}
                         </td>
                       )}
                       {unitLevel && (
                         <td
-                          className={`px-2 py-1 text-right tabular-nums font-semibold ${
-                            row.kebutuhan - (row.bezetting ?? 0) < 0 ? 'text-red-600' : 'text-slate-700'
+                          className={`whitespace-nowrap px-1 py-1 text-right align-top tabular-nums font-semibold ${
+                            group.kebutuhan - group.bezetting < 0 ? 'text-red-600' : 'text-slate-700'
                           }`}
                         >
-                          {row.kebutuhan - (row.bezetting ?? 0)}
+                          {group.kebutuhan - group.bezetting}
                         </td>
                       )}
                     </tr>
                     {unitLevel && open && (
                       <tr className="bg-slate-50">
-                        <td colSpan={colSpan} className="px-2 py-2">
+                        <td colSpan={colSpan} className="px-1.5 py-2">
+                          <div className="mb-1.5 space-y-1">
+                            {group.locations.map((location) => (
+                              <div
+                                key={location.location || 'tanpa-unit'}
+                                className="flex flex-wrap items-start justify-between gap-x-2 gap-y-0.5 rounded bg-white px-2 py-1 text-[10px]"
+                              >
+                                <span
+                                  className="min-w-0 break-words text-slate-500"
+                                  title={location.location}
+                                >
+                                  {relativeLocation(node.label, location.location) || 'Tanpa unit'}
+                                </span>
+                                <span className="shrink-0 whitespace-nowrap tabular-nums text-slate-400">
+                                  K {location.kebutuhan} · B {location.bezetting} · F{' '}
+                                  {location.kebutuhan - location.bezetting}
+                                </span>
+                              </div>
+                            ))}
+                          </div>
                           {pegawai.length === 0 && (
                             <p className="rounded bg-white px-2 py-1 text-[11px] text-slate-400">
                               Belum ada pegawai pada jabatan ini.
@@ -233,10 +275,20 @@ export function NodeDetail({ node }: NodeDetailProps) {
                             {pegawai.map((orang, index) => (
                               <li
                                 key={`${orang.nip}-${index}`}
-                                className="flex items-center justify-between rounded bg-white px-2 py-1 text-[11px]"
+                                className="flex flex-wrap items-start justify-between gap-x-2 gap-y-0.5 rounded bg-white px-2 py-1 text-[11px]"
                               >
-                                <span className="font-medium text-slate-700">{orang.nama}</span>
-                                <span className="text-slate-400">
+                                <span className="min-w-0 break-words">
+                                  <span className="font-medium text-slate-700">{orang.nama}</span>
+                                  {group.locations.length > 1 && (
+                                    <span
+                                      className="block break-words text-[10px] text-slate-400"
+                                      title={orang.location}
+                                    >
+                                      {relativeLocation(node.label, orang.location)}
+                                    </span>
+                                  )}
+                                </span>
+                                <span className="shrink-0 whitespace-nowrap text-[10px] text-slate-400">
                                   {orang.nip} · {orang.status}
                                 </span>
                               </li>

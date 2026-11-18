@@ -1,4 +1,4 @@
-import type { FormasiRow, OrgNode, OrgNodeKind } from './types'
+import type { FormasiRow, JabatanGroup, OrgNode, OrgNodeKind } from './types'
 
 /** Treat the workbook's placeholder "-" and empty strings as "no value". */
 export function normalizeName(value: string | null | undefined): string {
@@ -234,6 +234,108 @@ export function collectDescendantRows(node: OrgNode): FormasiRow[] {
   const result = [...node.rows]
   for (const child of node.children) result.push(...collectDescendantRows(child))
   return result
+}
+
+const ESELON_RANK: Record<string, number> = { I: 0, II: 1, III: 2, IV: 3 }
+
+const JENJANG_RANK: Record<string, number> = {
+  'Ahli Utama': 0,
+  'Ahli Madya': 1,
+  'Ahli Muda': 2,
+  'Ahli Pertama': 3,
+  Penyelia: 4,
+  Mahir: 5,
+  Terampil: 6,
+  Pemula: 7,
+}
+
+function eselonRank(eselon: string): number {
+  const value = eselon.trim().toUpperCase()
+  if (!value || value === '-') return 9
+  return ESELON_RANK[value] ?? 8
+}
+
+function jenjangRank(jenjang: string): number {
+  const value = jenjang.trim()
+  if (!value || value === '-') return 99
+  return JENJANG_RANK[value] ?? 90
+}
+
+/**
+ * Structural first, then positions that are part of the formasi (fungsional
+ * before pelaksana), then positions outside the formasi, then anything else.
+ */
+function categoryRank(group: JabatanGroup): number {
+  const inFormasi = group.formasi !== 'TIDAK'
+  if (group.jenisJabatan === 'Jabatan Struktural') return 0
+  if (group.jenisJabatan === 'Jabatan Fungsional') return inFormasi ? 1 : 3
+  if (group.jenisJabatan === 'Jabatan Pelaksana') return inFormasi ? 2 : 4
+  return 5
+}
+
+/**
+ * Aggregate rows with the same jabatan + jenjang for the node detail list.
+ * Rows that only differ by unit/satuan/seksi are combined; `formasi` and
+ * `jenisJabatan` stay in the key so "Formasi: Tidak" rows remain separate.
+ * The result is sorted for display: structural (highest eselon first),
+ * fungsional/pelaksana in formasi, then outside the formasi, each A-Z and
+ * with a hierarchical jenjang order.
+ */
+export function groupRowsByJabatan(rows: FormasiRow[]): JabatanGroup[] {
+  const groups = new Map<string, JabatanGroup>()
+  for (const row of rows) {
+    const key = JSON.stringify([row.jabatan, row.jenjang, row.jenisJabatan, row.formasi])
+    let group = groups.get(key)
+    if (!group) {
+      group = {
+        key,
+        jabatan: row.jabatan,
+        jenjang: row.jenjang,
+        eselon: row.eselon,
+        jenisJabatan: row.jenisJabatan,
+        formasi: row.formasi,
+        rows: [],
+        kebutuhan: 0,
+        bezetting: 0,
+        pegawai: [],
+        locations: [],
+      }
+      groups.set(key, group)
+    }
+    if (eselonRank(row.eselon) < eselonRank(group.eselon)) group.eselon = row.eselon
+    group.rows.push(row)
+    group.kebutuhan += row.kebutuhan
+    group.bezetting += row.bezetting ?? 0
+    const location = [row.unitKerja, row.satuanKerja, row.seksiKerja]
+      .filter((value) => value && value !== '-')
+      .join(' › ')
+    let locationGroup = group.locations.find((item) => item.location === location)
+    if (!locationGroup) {
+      locationGroup = { location, rows: [], kebutuhan: 0, bezetting: 0, pegawai: [] }
+      group.locations.push(locationGroup)
+    }
+    locationGroup.rows.push(row)
+    locationGroup.kebutuhan += row.kebutuhan
+    locationGroup.bezetting += row.bezetting ?? 0
+    for (const orang of row.pegawai ?? []) {
+      const grouped = { ...orang, location }
+      group.pegawai.push(grouped)
+      locationGroup.pegawai.push(grouped)
+    }
+  }
+  return [...groups.values()].sort((a, b) => {
+    const category = categoryRank(a) - categoryRank(b)
+    if (category !== 0) return category
+    if (a.jenisJabatan === 'Jabatan Struktural') {
+      const eselon = eselonRank(a.eselon) - eselonRank(b.eselon)
+      if (eselon !== 0) return eselon
+    }
+    const jabatan = a.jabatan.localeCompare(b.jabatan, 'id')
+    if (jabatan !== 0) return jabatan
+    const jenjang = jenjangRank(a.jenjang) - jenjangRank(b.jenjang)
+    if (jenjang !== 0) return jenjang
+    return a.jenjang.localeCompare(b.jenjang, 'id')
+  })
 }
 
 export function findNode(node: OrgNode, id: string): OrgNode | null {
