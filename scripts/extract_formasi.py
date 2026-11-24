@@ -330,7 +330,8 @@ def extract_employees(path: Path) -> list[dict]:
     employees: list[dict] = []
     for _, row in df.iterrows():
         nama = clean(row.get("NAMA LENGKAP"))
-        unit = clean(row.get("UNIT KERJA"))
+        # UNIT KERJA preferred; fall back to UNIT KERJA BALAI PS
+        unit = clean(row.get("UNIT KERJA")) or clean(row.get("UNIT KERJA BALAI PS"))
         if not nama or not unit:
             continue
         nama_jabatan = clean(row.get("NAMA JABATAN"))
