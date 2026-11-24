@@ -1,5 +1,5 @@
 {
- "generatedAt": "2026-10-07T03:50:42.699266+00:00",
+ "generatedAt": "2026-11-24T03:59:39.190357+00:00",
  "status": {
   "Analis Hukum": "DIUSULKAN_PEMBINA",
   "Analis Kebijakan": "DIUSULKAN_PEMBINA",
@@ -9,7 +9,7 @@
   "Analis Sumber Daya Manusia Aparatur": "DITETAPKAN_MENPANRB",
   "Arsiparis": "DITETAPKAN_MENPANRB",
   "Dosen (Lektor)": "BELUM_DIBUKA",
-  "Pembina Jasa Konstruksi": "DIUSULKAN_MENPANRB",
+  "Pembina Jasa Konstruksi": "DITETAPKAN_MENPANRB",
   "Penata Kelola Bangunan Gedung dan Kawasan Permukiman": "DIHITUNG_PEMBINA",
   "Penata Kelola Jalan dan Jembatan": "BELUM_DIBUKA",
   "Penata Kelola Penyehatan Lingkungan": "DITETAPKAN_MENPANRB",
@@ -24,8 +24,8 @@
   "Pengelola Sumber Daya Air": "BELUM_DIBUKA",
   "Pengembang Teknologi Pembelajaran": "BELUM_DIBUKA",
   "Perancang Perundang-Undangan": "DIHITUNG_PEMBINA",
-  "Perencana": "DIHITUNG_PEMBINA",
-  "Pranata Hubungan Masyarakat": "DIUSULKAN_MENPANRB",
+  "Perencana": "DIUSULKAN_PEMBINA",
+  "Pranata Hubungan Masyarakat": "DITETAPKAN_MENPANRB",
   "Pranata Keuangan APBN": "DIHITUNG_PEMBINA",
   "Pranata Komputer": "DIUSULKAN_MENPANRB",
   "Pranata Sumber Daya Manusia Aparatur": "DITETAPKAN_MENPANRB",

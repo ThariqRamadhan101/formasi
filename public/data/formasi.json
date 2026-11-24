@@ -1,12 +1,12 @@
 {
- "generatedAt": "2026-10-07T03:50:42.699266+00:00",
+ "generatedAt": "2026-11-24T03:59:39.190357+00:00",
  "source": "FORMASI.csv + DATA PEGAWAI.xlsx",
  "summary": {
-  "rows": 2373,
+  "rows": 2385,
   "kebutuhan": 5367,
-  "bezetting": 1306,
-  "pegawaiTanpaFormasi": 262,
-  "unitKerja": 39,
+  "bezetting": 1305,
+  "pegawaiTanpaFormasi": 279,
+  "unitKerja": 40,
   "satuanKerja": 51,
   "jabatan": 71
  },
@@ -231,9 +231,15 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 2,
-   "bezetting": 0,
-   "pegawai": [],
-   "formasiGap": 2
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Krisnaningrum, S.KOM",
+     "nip": "198303082010122004",
+     "status": "PNS"
+    }
+   ],
+   "formasiGap": 1
   },
   {
    "id": 14,
@@ -1155,20 +1161,15 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 2,
-   "bezetting": 2,
+   "bezetting": 1,
    "pegawai": [
-    {
-     "nama": "Muhammad Naufal Rafif, A.Md.T.",
-     "nip": "199803262020121003",
-     "status": "PNS"
-    },
     {
      "nama": "Aditya Pratama Putra, A.Md.",
      "nip": "199511062020121004",
      "status": "PNS"
     }
    ],
-   "formasiGap": 0
+   "formasiGap": 1
   },
   {
    "id": 68,
@@ -1657,14 +1658,14 @@
    "bezetting": 2,
    "pegawai": [
     {
-     "nama": "Denda Zakaria, S.Tr.T.",
-     "nip": "199611072025061009",
+     "nama": "Faizal Akbar Maulana, S.T.",
+     "nip": "199702042022031011",
      "status": "PNS"
     },
     {
-     "nama": "Brillianti Rosamund Ariadne Larasati, S.T.",
-     "nip": "200002062025062018",
-     "status": "PNS"
+     "nama": "Sinta Delia, S.Tr.T.",
+     "nip": "199805202024212017",
+     "status": "PPPK"
     }
    ],
    "formasiGap": 6
@@ -2147,15 +2148,20 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 8,
-   "bezetting": 1,
+   "bezetting": 2,
    "pegawai": [
     {
-     "nama": "Muhammad Irfan Tian Syamsuddin, S.Tr.T",
-     "nip": "199811162025061012",
+     "nama": "Denda Zakaria, S.Tr.T.",
+     "nip": "199611072025061009",
+     "status": "PNS"
+    },
+    {
+     "nama": "Brillianti Rosamund Ariadne Larasati, S.T.",
+     "nip": "200002062025062018",
      "status": "PNS"
     }
    ],
-   "formasiGap": 7
+   "formasiGap": 6
   },
   {
    "id": 123,
@@ -2566,8 +2572,8 @@
    "bezetting": 1,
    "pegawai": [
     {
-     "nama": "Amalia Rizqy Sabillah, S.Tr.T.",
-     "nip": "200008182025062019",
+     "nama": "Muhammad Irfan Tian Syamsuddin, S.Tr.T",
+     "nip": "199811162025061012",
      "status": "PNS"
     }
    ],
@@ -3019,8 +3025,8 @@
    "bezetting": 1,
    "pegawai": [
     {
-     "nama": "Haya Luthfiana, S.T.",
-     "nip": "200102052025062012",
+     "nama": "Amalia Rizqy Sabillah, S.Tr.T.",
+     "nip": "200008182025062019",
      "status": "PNS"
     }
    ],
@@ -3292,9 +3298,15 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 3,
-   "bezetting": 0,
-   "pegawai": [],
-   "formasiGap": 3
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Vidia Chandra Dewi, S.T.",
+     "nip": "199002032018022001",
+     "status": "PNS"
+    }
+   ],
+   "formasiGap": 2
   },
   {
    "id": 195,
@@ -3412,9 +3424,9 @@
    "bezetting": 1,
    "pegawai": [
     {
-     "nama": "Sinta Delia, S.Tr.T.",
-     "nip": "199805202024212017",
-     "status": "PPPK"
+     "nama": "Haya Luthfiana, S.T.",
+     "nip": "200102052025062012",
+     "status": "PNS"
     }
    ],
    "formasiGap": 6
@@ -4225,28 +4237,28 @@
    "bezetting": 5,
    "pegawai": [
     {
-     "nama": "I Putu Eka Darmawan, S.T.",
+     "nama": "I Putu Eka Darmawan, S.T., M.T.",
      "nip": "199607122022031005",
      "status": "PNS"
     },
     {
-     "nama": "Muhammad Raihan Priana, S.T.",
-     "nip": "199905262025061012",
+     "nama": "Hendra Widiantono, S.T.",
+     "nip": "199712172025061008",
      "status": "PNS"
     },
     {
-     "nama": "Mochammad Zhafran Ichsan Maharama, S.T.",
-     "nip": "200010252025061011",
+     "nama": "Farchan Aditya Johari, S.Tr.T.",
+     "nip": "200105262025061007",
      "status": "PNS"
     },
     {
-     "nama": "Ruth Geofanny Simanjuntak, S.Tr.T",
-     "nip": "199709302022032010",
+     "nama": "Gandhes Faizah Ramadhani, S.T.",
+     "nip": "199701282022032012",
      "status": "PNS"
     },
     {
-     "nama": "Hikmatul Hasanah, S.Tr.T",
-     "nip": "199904022025062014",
+     "nama": "Isna Saadah, S.Tr.T",
+     "nip": "199810022022032007",
      "status": "PNS"
     }
    ],
@@ -4675,28 +4687,28 @@
    "bezetting": 5,
    "pegawai": [
     {
-     "nama": "Muhammad Hafiz Ratu Agung, S.T.",
-     "nip": "199805132022031009",
+     "nama": "Rizal Dimas Aprelihandro, S.T.",
+     "nip": "199504172022031007",
      "status": "PNS"
     },
     {
-     "nama": "Hendra Widiantono, S.T.",
-     "nip": "199712172025061008",
+     "nama": "Akhdan Muhammad Alfawwaz, S.T.",
+     "nip": "199906282025061014",
      "status": "PNS"
     },
     {
-     "nama": "Farchan Aditya Johari, S.Tr.T.",
-     "nip": "200105262025061007",
+     "nama": "Jhohanes Very Michael, S.Tr.T",
+     "nip": "199811252022031007",
      "status": "PNS"
     },
     {
-     "nama": "Gandhes Faizah Ramadhani, S.T.",
-     "nip": "199701282022032012",
+     "nama": "Felicia Tasmica Izzatudina, S.T.",
+     "nip": "199803182022032011",
      "status": "PNS"
     },
     {
-     "nama": "Isna Saadah, S.Tr.T",
-     "nip": "199810022022032007",
+     "nama": "Dwi Putroe Naulia, S.T.",
+     "nip": "199904242025062011",
      "status": "PNS"
     }
    ],
@@ -5057,8 +5069,8 @@
      "status": "PNS"
     },
     {
-     "nama": "Vania Tri Cahaya, S.T.",
-     "nip": "199212122019032013",
+     "nama": "Heri Kastomo, S.T., M.T.",
+     "nip": "197610012008121001",
      "status": "PNS"
     },
     {
@@ -5083,28 +5095,28 @@
    "bezetting": 5,
    "pegawai": [
     {
-     "nama": "Rizal Dimas Aprelihandro, S.T.",
-     "nip": "199504172022031007",
+     "nama": "I Nengah Gandi Wirotama, S.T.",
+     "nip": "199611012022031009",
      "status": "PNS"
     },
     {
-     "nama": "Akhdan Muhammad Alfawwaz, S.T.",
-     "nip": "199906282025061014",
+     "nama": "Arif Adi Nur Rohman, S.Tr.T",
+     "nip": "199912042025061017",
      "status": "PNS"
     },
     {
-     "nama": "Jhohanes Very Michael, S.Tr.T",
-     "nip": "199811252022031007",
+     "nama": "Haidaravi Ardi, S.Tr.T.",
+     "nip": "200206022025061009",
      "status": "PNS"
     },
     {
-     "nama": "Felicia Tasmica Izzatudina, S.T.",
-     "nip": "199803182022032011",
+     "nama": "Ni Made Ayu Wulandari, S.T.",
+     "nip": "199608152022032011",
      "status": "PNS"
     },
     {
-     "nama": "Dwi Putroe Naulia, S.T.",
-     "nip": "199904242025062011",
+     "nama": "Dhina Nugrahanie, S.Tr.T.",
+     "nip": "200105202025062014",
      "status": "PNS"
     }
    ],
@@ -5465,8 +5477,8 @@
      "status": "PPPK"
     },
     {
-     "nama": "Clara Afiliati Pritania, S.T.",
-     "nip": "199304142019032009",
+     "nama": "Vania Tri Cahaya, S.T.",
+     "nip": "199212122019032013",
      "status": "PNS"
     },
     {
@@ -5488,35 +5500,30 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 8,
-   "bezetting": 5,
+   "bezetting": 4,
    "pegawai": [
     {
-     "nama": "I Nengah Gandi Wirotama, S.T.",
-     "nip": "199611012022031009",
+     "nama": "Jhon Fendi, S.T.",
+     "nip": "198311032024211001",
+     "status": "PPPK"
+    },
+    {
+     "nama": "Muhammad Mukzon Rofiqi, S.Tr.T",
+     "nip": "199911262025061007",
      "status": "PNS"
     },
     {
-     "nama": "Arif Adi Nur Rohman, S.Tr.T",
-     "nip": "199912042025061017",
+     "nama": "Erwita Nurika, S.T., M.Ars.",
+     "nip": "199405202020122004",
      "status": "PNS"
     },
     {
-     "nama": "Haidaravi Ardi, S.Tr.T.",
-     "nip": "200206022025061009",
-     "status": "PNS"
-    },
-    {
-     "nama": "Ni Made Ayu Wulandari, S.T.",
-     "nip": "199608152022032011",
-     "status": "PNS"
-    },
-    {
-     "nama": "Dhina Nugrahanie, S.Tr.T.",
-     "nip": "200105202025062014",
+     "nama": "Anindita Dara Fitriani, S. Ars",
+     "nip": "199902032025062012",
      "status": "PNS"
     }
    ],
-   "formasiGap": 3
+   "formasiGap": 4
   },
   {
    "id": 326,
@@ -5873,8 +5880,8 @@
      "status": "PNS"
     },
     {
-     "nama": "Arum Kurnia Intani, S.T.",
-     "nip": "199412222019032015",
+     "nama": "Clara Afiliati Pritania, S.T.",
+     "nip": "199304142019032009",
      "status": "PNS"
     }
    ],
@@ -5894,23 +5901,23 @@
    "bezetting": 4,
    "pegawai": [
     {
-     "nama": "Jhon Fendi, S.T.",
-     "nip": "198311032024211001",
-     "status": "PPPK"
-    },
-    {
-     "nama": "Muhammad Mukzon Rofiqi, S.Tr.T",
-     "nip": "199911262025061007",
+     "nama": "Muhammad Raihan Priana, S.T.",
+     "nip": "199905262025061012",
      "status": "PNS"
     },
     {
-     "nama": "Erwita Nurika, S.T., M.Ars.",
-     "nip": "199405202020122004",
+     "nama": "Mochammad Zhafran Ichsan Maharama, S.T.",
+     "nip": "200010252025061011",
      "status": "PNS"
     },
     {
-     "nama": "Anindita Dara Fitriani, S. Ars",
-     "nip": "199902032025062012",
+     "nama": "Ruth Geofanny Simanjuntak, S.Tr.T",
+     "nip": "199709302022032010",
+     "status": "PNS"
+    },
+    {
+     "nama": "Hikmatul Hasanah, S.Tr.T",
+     "nip": "199904022025062014",
      "status": "PNS"
     }
    ],
@@ -8856,15 +8863,20 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 2,
-   "bezetting": 1,
+   "bezetting": 2,
    "pegawai": [
     {
      "nama": "Radita Sukma Kristiani, S.T., M.T.",
      "nip": "198304162009122001",
      "status": "PNS"
+    },
+    {
+     "nama": "Ulfa Nabila, S.T.",
+     "nip": "199408012018022002",
+     "status": "PNS"
     }
    ],
-   "formasiGap": 1
+   "formasiGap": 0
   },
   {
    "id": 525,
@@ -9703,8 +9715,8 @@
    "bezetting": 1,
    "pegawai": [
     {
-     "nama": "Ulfa Nabila, S.T.",
-     "nip": "199408012018022002",
+     "nama": "Ine Lestari, S.T.",
+     "nip": "198508082010012005",
      "status": "PNS"
     }
    ],
@@ -10013,9 +10025,15 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 2,
-   "bezetting": 0,
-   "pegawai": [],
-   "formasiGap": 2
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Fitriana Ayu Ningrum, S.H.",
+     "nip": "198308082009122002",
+     "status": "PNS"
+    }
+   ],
+   "formasiGap": 1
   },
   {
    "id": 595,
@@ -11613,13 +11631,8 @@
    "jenisJabatan": "Jabatan Pelaksana",
    "formasi": "YA",
    "kebutuhan": 3,
-   "bezetting": 3,
+   "bezetting": 2,
    "pegawai": [
-    {
-     "nama": "Dumaria Hotmauli Sidabutar, S.Si",
-     "nip": "196810082008122001",
-     "status": "PNS"
-    },
     {
      "nama": "Eva Paulin Sarokta Marbun, S.E.",
      "nip": "199310112025212048",
@@ -11631,7 +11644,7 @@
      "status": "PPPK"
     }
    ],
-   "formasiGap": 0
+   "formasiGap": 1
   },
   {
    "id": 684,
@@ -11759,43 +11772,43 @@
      "status": "PNS"
     },
     {
-     "nama": "Heri Aryanto, S.T.",
-     "nip": "198307192024211005",
+     "nama": "Fachrur Rozi Aznal Lubis, S.T.",
+     "nip": "199601022024211004",
      "status": "PPPK"
     },
     {
-     "nama": "Agung Pratama, S.T.",
-     "nip": "199212052024211003",
-     "status": "PPPK"
-    },
-    {
-     "nama": "Eben Tampubolon, ST.",
-     "nip": "199905192025061016",
+     "nama": "Yosua Giovannie Christoffer Sianipar, S.T.",
+     "nip": "199308072025061003",
      "status": "PNS"
     },
     {
-     "nama": "Rusfin Erwinsyah, S.T.",
-     "nip": "197901202025211018",
-     "status": "PPPK"
-    },
-    {
-     "nama": "Muhammad Soleh, S.T.",
-     "nip": "199112302025211032",
-     "status": "PPPK"
-    },
-    {
-     "nama": "Geofanny Dominica Sihaloho, S.T.",
-     "nip": "199708082022032014",
+     "nama": "Farid Fahlevi, S.T.",
+     "nip": "199712062025061010",
      "status": "PNS"
     },
     {
-     "nama": "Lili Purwati, S.T.",
-     "nip": "199712162022032017",
+     "nama": "Muhammad Ali Jinnah Siregar, S.T.",
+     "nip": "197901022025211027",
+     "status": "PPPK"
+    },
+    {
+     "nama": "Willie Vh Tobing, S.T.",
+     "nip": "199402032025211034",
+     "status": "PPPK"
+    },
+    {
+     "nama": "Angel Artha Rumintang Manalu, S.Tr.T",
+     "nip": "199601192022032013",
      "status": "PNS"
     },
     {
-     "nama": "Fani Nurul Fathia, S.Arsl.",
-     "nip": "200107282025062019",
+     "nama": "Annisa Nur Afifah, S.Ars",
+     "nip": "200201062025062008",
+     "status": "PNS"
+    },
+    {
+     "nama": "Magdalena Elista Situmorang, S.Tr.T.",
+     "nip": "199905262025062017",
      "status": "PNS"
     }
    ],
@@ -12047,55 +12060,50 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 9,
-   "bezetting": 9,
+   "bezetting": 8,
    "pegawai": [
     {
-     "nama": "Rizky Deco Nugroho, S.T.",
-     "nip": "199212242022031008",
-     "status": "PNS"
-    },
-    {
-     "nama": "Fachrur Rozi Aznal Lubis, S.T.",
-     "nip": "199601022024211004",
+     "nama": "Heri Aryanto, S.T.",
+     "nip": "198307192024211005",
      "status": "PPPK"
     },
     {
-     "nama": "Yosua Giovannie Christoffer Sianipar, S.T.",
-     "nip": "199308072025061003",
-     "status": "PNS"
-    },
-    {
-     "nama": "Farid Fahlevi, S.T.",
-     "nip": "199712062025061010",
-     "status": "PNS"
-    },
-    {
-     "nama": "Muhammad Ali Jinnah Siregar, S.T.",
-     "nip": "197901022025211027",
+     "nama": "Agung Pratama, S.T.",
+     "nip": "199212052024211003",
      "status": "PPPK"
     },
     {
-     "nama": "Willie Vh Tobing, S.T.",
-     "nip": "199402032025211034",
+     "nama": "Eben Tampubolon, ST.",
+     "nip": "199905192025061016",
+     "status": "PNS"
+    },
+    {
+     "nama": "Rusfin Erwinsyah, S.T.",
+     "nip": "197901202025211018",
      "status": "PPPK"
     },
     {
-     "nama": "Angel Artha Rumintang Manalu, S.Tr.T",
-     "nip": "199601192022032013",
+     "nama": "Muhammad Soleh, S.T.",
+     "nip": "199112302025211032",
+     "status": "PPPK"
+    },
+    {
+     "nama": "Geofanny Dominica Sihaloho, S.T.",
+     "nip": "199708082022032014",
      "status": "PNS"
     },
     {
-     "nama": "Annisa Nur Afifah, S.Ars",
-     "nip": "200201062025062008",
+     "nama": "Lili Purwati, S.T.",
+     "nip": "199712162022032017",
      "status": "PNS"
     },
     {
-     "nama": "Magdalena Elista Situmorang, S.Tr.T.",
-     "nip": "199905262025062017",
+     "nama": "Fani Nurul Fathia, S.Arsl.",
+     "nip": "200107282025062019",
      "status": "PNS"
     }
    ],
-   "formasiGap": 0
+   "formasiGap": 1
   },
   {
    "id": 703,
@@ -12741,15 +12749,9 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 2,
-   "bezetting": 1,
-   "pegawai": [
-    {
-     "nama": "Chairil Syam, S.T.",
-     "nip": "198910192018021001",
-     "status": "PNS"
-    }
-   ],
-   "formasiGap": 1
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 2
   },
   {
    "id": 741,
@@ -12777,9 +12779,15 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 6,
-   "bezetting": 0,
-   "pegawai": [],
-   "formasiGap": 6
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Heru Dwiki Bahrum, A.Md.T.",
+     "nip": "199409182020121006",
+     "status": "PNS"
+    }
+   ],
+   "formasiGap": 5
   },
   {
    "id": 743,
@@ -12792,15 +12800,9 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 6,
-   "bezetting": 1,
-   "pegawai": [
-    {
-     "nama": "Heru Dwiki Bahrum, A.Md.T.",
-     "nip": "199409182020121006",
-     "status": "PNS"
-    }
-   ],
-   "formasiGap": 5
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 6
   },
   {
    "id": 744,
@@ -15392,20 +15394,15 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 4,
-   "bezetting": 2,
+   "bezetting": 1,
    "pegawai": [
     {
      "nama": "Marcel Tirawan, S.T.",
      "nip": "199303232020121006",
      "status": "PNS"
-    },
-    {
-     "nama": "Marlina, ST",
-     "nip": "197509222008122001",
-     "status": "PNS"
     }
    ],
-   "formasiGap": 2
+   "formasiGap": 3
   },
   {
    "id": 895,
@@ -16039,9 +16036,15 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 2,
-   "bezetting": 0,
-   "pegawai": [],
-   "formasiGap": 2
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Chairil Syam, S.T.",
+     "nip": "198910192018021001",
+     "status": "PNS"
+    }
+   ],
+   "formasiGap": 1
   },
   {
    "id": 933,
@@ -16189,7 +16192,7 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 4,
-   "bezetting": 3,
+   "bezetting": 2,
    "pegawai": [
     {
      "nama": "Sabiluddin, S.ST..",
@@ -16200,14 +16203,9 @@
      "nama": "Oklanda, ST.",
      "nip": "197710302008121001",
      "status": "PNS"
-    },
-    {
-     "nama": "Ine Lestari, S.T.",
-     "nip": "198508082010012005",
-     "status": "PNS"
     }
    ],
-   "formasiGap": 1
+   "formasiGap": 2
   },
   {
    "id": 943,
@@ -16896,9 +16894,15 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 6,
-   "bezetting": 0,
-   "pegawai": [],
-   "formasiGap": 6
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Ahmad Nizar, A.Md.",
+     "nip": "199612102020121005",
+     "status": "PNS"
+    }
+   ],
+   "formasiGap": 5
   },
   {
    "id": 983,
@@ -16911,20 +16915,15 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 6,
-   "bezetting": 2,
+   "bezetting": 1,
    "pegawai": [
     {
-     "nama": "Ahmad Nizar, A.Md.",
-     "nip": "199612102020121005",
-     "status": "PNS"
-    },
-    {
-     "nama": "Shinta, A.Md.",
-     "nip": "198809022024212008",
+     "nama": "Ramadhian Herganda, A.Md.",
+     "nip": "198406132024211003",
      "status": "PPPK"
     }
    ],
-   "formasiGap": 4
+   "formasiGap": 5
   },
   {
    "id": 984,
@@ -17127,8 +17126,8 @@
    "bezetting": 1,
    "pegawai": [
     {
-     "nama": "Ramadhian Herganda, A.Md.",
-     "nip": "198406132024211003",
+     "nama": "Shinta, A.Md.",
+     "nip": "198809022024212008",
      "status": "PPPK"
     }
    ],
@@ -17310,15 +17309,9 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 1,
-   "bezetting": 1,
-   "pegawai": [
-    {
-     "nama": "Siska Ramanda Sari, S.M.",
-     "nip": "198705112024212005",
-     "status": "PPPK"
-    }
-   ],
-   "formasiGap": 0
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 1
   },
   {
    "id": 1008,
@@ -17511,15 +17504,9 @@
    "jenisJabatan": "Jabatan Pelaksana",
    "formasi": "YA",
    "kebutuhan": 1,
-   "bezetting": 1,
-   "pegawai": [
-    {
-     "nama": "Fery Yunardi",
-     "nip": "197102012006041009",
-     "status": "PNS"
-    }
-   ],
-   "formasiGap": 0
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 1
   },
   {
    "id": 1021,
@@ -17547,15 +17534,9 @@
    "jenisJabatan": "Jabatan Pelaksana",
    "formasi": "YA",
    "kebutuhan": 1,
-   "bezetting": 1,
-   "pegawai": [
-    {
-     "nama": "Indra Jaya, ST",
-     "nip": "197212022007011005",
-     "status": "PNS"
-    }
-   ],
-   "formasiGap": 0
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 1
   },
   {
    "id": 1023,
@@ -17583,15 +17564,9 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 2,
-   "bezetting": 1,
-   "pegawai": [
-    {
-     "nama": "Daru Suryaningwang, S.T., M.Sc.",
-     "nip": "198412022009121001",
-     "status": "PNS"
-    }
-   ],
-   "formasiGap": 1
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 2
   },
   {
    "id": 1025,
@@ -17604,20 +17579,9 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 5,
-   "bezetting": 2,
-   "pegawai": [
-    {
-     "nama": "Bujangga, S.T.",
-     "nip": "199211222018021001",
-     "status": "PNS"
-    },
-    {
-     "nama": "Yondy Septian, S.T.",
-     "nip": "198709072024211004",
-     "status": "PPPK"
-    }
-   ],
-   "formasiGap": 3
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 5
   },
   {
    "id": 1026,
@@ -17630,35 +17594,9 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 9,
-   "bezetting": 5,
-   "pegawai": [
-    {
-     "nama": "Irfan Muhammad Rosadi, S.T.",
-     "nip": "199712062025061011",
-     "status": "PNS"
-    },
-    {
-     "nama": "Dimas Triwibowo",
-     "nip": "199108292025061003",
-     "status": "PNS"
-    },
-    {
-     "nama": "Muhamad Fikri Burli, S.Tr.T",
-     "nip": "199909112025061010",
-     "status": "PNS"
-    },
-    {
-     "nama": "Rumantir, S.T.",
-     "nip": "198410242025211027",
-     "status": "PPPK"
-    },
-    {
-     "nama": "Dini Pertiwi, S.Tr.T",
-     "nip": "199507162025062010",
-     "status": "PNS"
-    }
-   ],
-   "formasiGap": 4
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 9
   },
   {
    "id": 1027,
@@ -17836,15 +17774,9 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 4,
-   "bezetting": 1,
-   "pegawai": [
-    {
-     "nama": "Wahyu Adi Sanjaya, S.Ars.",
-     "nip": "199510032019031006",
-     "status": "PNS"
-    }
-   ],
-   "formasiGap": 3
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 4
   },
   {
    "id": 1039,
@@ -17857,35 +17789,9 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 9,
-   "bezetting": 5,
-   "pegawai": [
-    {
-     "nama": "Muhammad Dzikrillah, S.Tr.T.",
-     "nip": "200112272025061006",
-     "status": "PNS"
-    },
-    {
-     "nama": "Zuhdi Firdaus Saputro, S.PWK",
-     "nip": "200002212025061007",
-     "status": "PNS"
-    },
-    {
-     "nama": "Rizal Bahtiar, S.ST",
-     "nip": "199507132025061007",
-     "status": "PNS"
-    },
-    {
-     "nama": "Deny Kurbani, S.T.",
-     "nip": "198409062025211032",
-     "status": "PPPK"
-    },
-    {
-     "nama": "Ellvis Saputri, B.QS.",
-     "nip": "199104252025062006",
-     "status": "PNS"
-    }
-   ],
-   "formasiGap": 4
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 9
   },
   {
    "id": 1040,
@@ -18524,9 +18430,15 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 6,
-   "bezetting": 0,
-   "pegawai": [],
-   "formasiGap": 6
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Slamet Adi Nur Rokhim, A.Md.",
+     "nip": "199609222020121003",
+     "status": "PNS"
+    }
+   ],
+   "formasiGap": 5
   },
   {
    "id": 1078,
@@ -18539,15 +18451,9 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 6,
-   "bezetting": 1,
-   "pegawai": [
-    {
-     "nama": "Slamet Adi Nur Rokhim, A.Md.",
-     "nip": "199609222020121003",
-     "status": "PNS"
-    }
-   ],
-   "formasiGap": 5
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 6
   },
   {
    "id": 1079,
@@ -19276,8 +19182,8 @@
      "status": "PNS"
     },
     {
-     "nama": "Qatrunnada Salsabila Harahap, S.Ars.",
-     "nip": "199507162019032011",
+     "nama": "Arum Kurnia Intani, S.T.",
+     "nip": "199412222019032015",
      "status": "PNS"
     }
    ],
@@ -19491,15 +19397,20 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 4,
-   "bezetting": 1,
+   "bezetting": 2,
    "pegawai": [
     {
      "nama": "Son Azis Cahyo Luckyto, S.T.",
      "nip": "198906192015031005",
      "status": "PNS"
+    },
+    {
+     "nama": "Qatrunnada Salsabila Harahap, S.Ars.",
+     "nip": "199507162019032011",
+     "status": "PNS"
     }
    ],
-   "formasiGap": 3
+   "formasiGap": 2
   },
   {
    "id": 1136,
@@ -20242,9 +20153,15 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 6,
-   "bezetting": 0,
-   "pegawai": [],
-   "formasiGap": 6
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Muhammad Dwi Nugroho, A.Md.",
+     "nip": "199412232020121003",
+     "status": "PNS"
+    }
+   ],
+   "formasiGap": 5
   },
   {
    "id": 1175,
@@ -20404,7 +20321,7 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 9,
-   "bezetting": 11,
+   "bezetting": 12,
    "pegawai": [
     {
      "nama": "Nicolas Ananto Seno Widiatmoko, S.T.",
@@ -20460,9 +20377,14 @@
      "nama": "Nurul Aulia Dwifa, S.ArsL",
      "nip": "199904132025062023",
      "status": "PNS"
+    },
+    {
+     "nama": "Nida Amalia Solehah, S. Tr. T.",
+     "nip": "200104282025062011",
+     "status": "PNS"
     }
    ],
-   "formasiGap": -2
+   "formasiGap": -3
   },
   {
    "id": 1184,
@@ -20536,15 +20458,9 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 6,
-   "bezetting": 1,
-   "pegawai": [
-    {
-     "nama": "Muhammad Dwi Nugroho, A.Md.",
-     "nip": "199412232020121003",
-     "status": "PNS"
-    }
-   ],
-   "formasiGap": 5
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 6
   },
   {
    "id": 1188,
@@ -21922,18 +21838,18 @@
      "status": "PNS"
     },
     {
-     "nama": "Lulut Laraseta, S.ST., M.T.",
-     "nip": "199108182020121006",
+     "nama": "Ajeng Febry Hapsari, S.T., M.T.",
+     "nip": "198802202010122007",
      "status": "PNS"
     },
     {
-     "nama": "Aprillya Trihartati, S.E., M.T.",
-     "nip": "198804042010122005",
+     "nama": "Afifah Kemala Hafsari, S.T., M.T., M.Eng.",
+     "nip": "198809212010122003",
      "status": "PNS"
     },
     {
-     "nama": "Yovita Eka Purnama Andriani, S.T.",
-     "nip": "199506302024212016",
+     "nama": "Sarah Luziani, S.Ars.",
+     "nip": "199612162024212067",
      "status": "PPPK"
     }
    ],
@@ -21958,34 +21874,34 @@
      "status": "PNS"
     },
     {
-     "nama": "Fruri Nuradim, S.T.",
-     "nip": "199402142022031008",
+     "nama": "Imam Fitriono, S.T.",
+     "nip": "199204042022031006",
      "status": "PNS"
     },
     {
-     "nama": "Muhamad Saifudin Ashari, S.T.",
-     "nip": "199505182025061008",
-     "status": "PNS"
-    },
-    {
-     "nama": "Bagus Abimanyu, S.T.",
-     "nip": "198003292025211020",
+     "nama": "Tito Hadinata, S.T.",
+     "nip": "199103082024211005",
      "status": "PPPK"
     },
     {
-     "nama": "Zulaikha Putri Pertiwi, S.Tr.T",
-     "nip": "199708122022032021",
-     "status": "PNS"
-    },
-    {
-     "nama": "Agustina Rakhman, S.T.",
-     "nip": "198508042024212006",
+     "nama": "Sukmono Setyo Adi, S.T.",
+     "nip": "198006192025211017",
      "status": "PPPK"
     },
     {
-     "nama": "Gemma Rosalia Medita Dewanti, S.T",
-     "nip": "200105132025062017",
+     "nama": "Dwi Windi Nugroho, S.T.",
+     "nip": "198401132025211024",
+     "status": "PPPK"
+    },
+    {
+     "nama": "Rizka Yuliani, S.T.",
+     "nip": "199007292022032004",
      "status": "PNS"
+    },
+    {
+     "nama": "Poppy Christiani Shariputri, S.T.",
+     "nip": "198403032024212002",
+     "status": "PPPK"
     }
    ],
    "formasiGap": 2
@@ -22183,7 +22099,7 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 4,
-   "bezetting": 5,
+   "bezetting": 4,
    "pegawai": [
     {
      "nama": "Kunthoaji Dewanto, S.T., M.Eng.",
@@ -22191,27 +22107,22 @@
      "status": "PNS"
     },
     {
-     "nama": "M Iqbal Hilmi, S.T.",
-     "nip": "199101272019031008",
+     "nama": "Lulut Laraseta, S.ST., M.T.",
+     "nip": "199108182020121006",
      "status": "PNS"
     },
     {
-     "nama": "Ajeng Febry Hapsari, S.T., M.T.",
-     "nip": "198802202010122007",
+     "nama": "Aprillya Trihartati, S.E., M.T.",
+     "nip": "198804042010122005",
      "status": "PNS"
     },
     {
-     "nama": "Afifah Kemala Hafsari, S.T., M.T., M.Eng.",
-     "nip": "198809212010122003",
-     "status": "PNS"
-    },
-    {
-     "nama": "Sarah Luziani, S.Ars.",
-     "nip": "199612162024212067",
+     "nama": "Yovita Eka Purnama Andriani, S.T.",
+     "nip": "199506302024212016",
      "status": "PPPK"
     }
    ],
-   "formasiGap": -1
+   "formasiGap": 0
   },
   {
    "id": 1279,
@@ -22224,40 +22135,45 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 9,
-   "bezetting": 6,
+   "bezetting": 7,
    "pegawai": [
     {
-     "nama": "Imam Fitriono, S.T.",
-     "nip": "199204042022031006",
+     "nama": "Muhammad Hafiz Ratu Agung, S.T.",
+     "nip": "199805132022031009",
      "status": "PNS"
     },
     {
-     "nama": "Tito Hadinata, S.T.",
-     "nip": "199103082024211005",
-     "status": "PPPK"
-    },
-    {
-     "nama": "Sukmono Setyo Adi, S.T.",
-     "nip": "198006192025211017",
-     "status": "PPPK"
-    },
-    {
-     "nama": "Dwi Windi Nugroho, S.T.",
-     "nip": "198401132025211024",
-     "status": "PPPK"
-    },
-    {
-     "nama": "Rizka Yuliani, S.T.",
-     "nip": "199007292022032004",
+     "nama": "Fruri Nuradim, S.T.",
+     "nip": "199402142022031008",
      "status": "PNS"
     },
     {
-     "nama": "Poppy Christiani Shariputri, S.T.",
-     "nip": "198403032024212002",
+     "nama": "Muhamad Saifudin Ashari, S.T.",
+     "nip": "199505182025061008",
+     "status": "PNS"
+    },
+    {
+     "nama": "Bagus Abimanyu, S.T.",
+     "nip": "198003292025211020",
      "status": "PPPK"
+    },
+    {
+     "nama": "Zulaikha Putri Pertiwi, S.Tr.T",
+     "nip": "199708122022032021",
+     "status": "PNS"
+    },
+    {
+     "nama": "Agustina Rakhman, S.T.",
+     "nip": "198508042024212006",
+     "status": "PPPK"
+    },
+    {
+     "nama": "Gemma Rosalia Medita Dewanti, S.T",
+     "nip": "200105132025062017",
+     "status": "PNS"
     }
    ],
-   "formasiGap": 3
+   "formasiGap": 2
   },
   {
    "id": 1280,
@@ -27002,20 +26918,15 @@
    "jenisJabatan": "Jabatan Pelaksana",
    "formasi": "YA",
    "kebutuhan": 2,
-   "bezetting": 2,
+   "bezetting": 1,
    "pegawai": [
-    {
-     "nama": "Alimansyuri",
-     "nip": "196809052008121002",
-     "status": "PNS"
-    },
     {
      "nama": "Zulkarnain",
      "nip": "197103202007101001",
      "status": "PNS"
     }
    ],
-   "formasiGap": 0
+   "formasiGap": 1
   },
   {
    "id": 1547,
@@ -27100,7 +27011,7 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 5,
-   "bezetting": 3,
+   "bezetting": 4,
    "pegawai": [
     {
      "nama": "Syarif Hidayat, ST",
@@ -27108,17 +27019,22 @@
      "status": "PNS"
     },
     {
-     "nama": "Ricky Tisna Saputra, S.T.",
-     "nip": "199212222024211008",
+     "nama": "M Iqbal Hilmi, S.T.",
+     "nip": "199101272019031008",
+     "status": "PNS"
+    },
+    {
+     "nama": "Deni Kurniawan, S.T.",
+     "nip": "199106092024211014",
      "status": "PPPK"
     },
     {
-     "nama": "Deky Pranata Putra, S.ST.",
-     "nip": "199312032024211011",
+     "nama": "Yuni Daniar, S.T.",
+     "nip": "198706292024212008",
      "status": "PPPK"
     }
    ],
-   "formasiGap": 2
+   "formasiGap": 1
   },
   {
    "id": 1552,
@@ -27383,13 +27299,13 @@
      "status": "PNS"
     },
     {
-     "nama": "Deni Kurniawan, S.T.",
-     "nip": "199106092024211014",
+     "nama": "Ricky Tisna Saputra, S.T.",
+     "nip": "199212222024211008",
      "status": "PPPK"
     },
     {
-     "nama": "Yuni Daniar, S.T.",
-     "nip": "198706292024212008",
+     "nama": "Deky Pranata Putra, S.ST.",
+     "nip": "199312032024211011",
      "status": "PPPK"
     }
    ],
@@ -29636,38 +29552,38 @@
      "status": "PNS"
     },
     {
-     "nama": "Bona Frans Willy Simamora, S.T.",
-     "nip": "200003062025061008",
+     "nama": "Muhammad Akbar Tafzila Janika, S.T.",
+     "nip": "200107312025061009",
      "status": "PNS"
     },
     {
-     "nama": "Juan Daniel Gurusinga, S.Tr.T",
-     "nip": "199912212025061008",
+     "nama": "Satrio Wibowo, S.T.",
+     "nip": "200102112025061008",
      "status": "PNS"
     },
     {
-     "nama": "Farhan Zulfauzi, S.Tr.T",
-     "nip": "199902012025061009",
+     "nama": "Dody Yunus Putra Siregar, S.T.",
+     "nip": "200001272025061009",
      "status": "PNS"
     },
     {
-     "nama": "Muh. Imawan Dhede, S.T.",
-     "nip": "199711162025061008",
-     "status": "PNS"
-    },
-    {
-     "nama": "Trisnawaty, S.T.",
-     "nip": "199403312024212005",
+     "nama": "Khaidar Abdushufi, S.T.",
+     "nip": "199204052025211054",
      "status": "PPPK"
     },
     {
-     "nama": "Aldia Riska Utami, S.T",
-     "nip": "200102262025062011",
+     "nama": "Galih Pratiti Citra Hastari, S.Tr.T.",
+     "nip": "200101092025062016",
      "status": "PNS"
     },
     {
-     "nama": "Rania Anggia Lubis, S.Tr.T",
-     "nip": "200001022025062017",
+     "nama": "Astrie Novia Dinata, S.P.W.K.",
+     "nip": "200011212025062015",
+     "status": "PNS"
+    },
+    {
+     "nama": "Noviana Shinta Dewi, S.T.",
+     "nip": "199311012025062009",
      "status": "PNS"
     }
    ],
@@ -29885,50 +29801,45 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 9,
-   "bezetting": 8,
+   "bezetting": 7,
    "pegawai": [
     {
-     "nama": "Faizal Akbar Maulana, S.T.",
-     "nip": "199702042022031011",
+     "nama": "Bona Frans Willy Simamora, S.T.",
+     "nip": "200003062025061008",
      "status": "PNS"
     },
     {
-     "nama": "Muhammad Akbar Tafzila Janika, S.T.",
-     "nip": "200107312025061009",
+     "nama": "Juan Daniel Gurusinga, S.Tr.T",
+     "nip": "199912212025061008",
      "status": "PNS"
     },
     {
-     "nama": "Satrio Wibowo, S.T.",
-     "nip": "200102112025061008",
+     "nama": "Farhan Zulfauzi, S.Tr.T",
+     "nip": "199902012025061009",
      "status": "PNS"
     },
     {
-     "nama": "Dody Yunus Putra Siregar, S.T.",
-     "nip": "200001272025061009",
+     "nama": "Muh. Imawan Dhede, S.T.",
+     "nip": "199711162025061008",
      "status": "PNS"
     },
     {
-     "nama": "Khaidar Abdushufi, S.T.",
-     "nip": "199204052025211054",
+     "nama": "Trisnawaty, S.T.",
+     "nip": "199403312024212005",
      "status": "PPPK"
     },
     {
-     "nama": "Galih Pratiti Citra Hastari, S.Tr.T.",
-     "nip": "200101092025062016",
+     "nama": "Aldia Riska Utami, S.T",
+     "nip": "200102262025062011",
      "status": "PNS"
     },
     {
-     "nama": "Astrie Novia Dinata, S.P.W.K.",
-     "nip": "200011212025062015",
-     "status": "PNS"
-    },
-    {
-     "nama": "Noviana Shinta Dewi, S.T.",
-     "nip": "199311012025062009",
+     "nama": "Rania Anggia Lubis, S.Tr.T",
+     "nip": "200001022025062017",
      "status": "PNS"
     }
    ],
-   "formasiGap": 1
+   "formasiGap": 2
   },
   {
    "id": 1710,
@@ -30426,8 +30337,8 @@
    "bezetting": 1,
    "pegawai": [
     {
-     "nama": "Heri Kastomo, S.T., M.T.",
-     "nip": "197610012008121001",
+     "nama": "Bid Handoro, S.T., M.T.",
+     "nip": "198502252009121001",
      "status": "PNS"
     }
    ],
@@ -30661,15 +30572,9 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 4,
-   "bezetting": 1,
-   "pegawai": [
-    {
-     "nama": "Bid Handoro, S.T., M.T.",
-     "nip": "198502252009121001",
-     "status": "PNS"
-    }
-   ],
-   "formasiGap": 3
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 4
   },
   {
    "id": 1754,
@@ -31436,8 +31341,8 @@
    "bezetting": 1,
    "pegawai": [
     {
-     "nama": "Febrina Monalisa Siahaan, A.Md.",
-     "nip": "199602172020122010",
+     "nama": "Ruslandy Maudi",
+     "nip": "197104122008121001",
      "status": "PNS"
     }
    ],
@@ -31457,9 +31362,9 @@
    "bezetting": 1,
    "pegawai": [
     {
-     "nama": "Ruslandy Maudi",
-     "nip": "197104122008121001",
-     "status": "PNS"
+     "nama": "Ahmad Arifin, A.Md.",
+     "nip": "199108012024211007",
+     "status": "PPPK"
     }
    ],
    "formasiGap": 5
@@ -31684,9 +31589,15 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 5,
-   "bezetting": 0,
-   "pegawai": [],
-   "formasiGap": 5
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Febrina Monalisa Siahaan, A.Md.",
+     "nip": "199602172020122010",
+     "status": "PNS"
+    }
+   ],
+   "formasiGap": 4
   },
   {
    "id": 1805,
@@ -31699,15 +31610,9 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 6,
-   "bezetting": 1,
-   "pegawai": [
-    {
-     "nama": "Ahmad Arifin, A.Md.",
-     "nip": "199108012024211007",
-     "status": "PPPK"
-    }
-   ],
-   "formasiGap": 5
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 6
   },
   {
    "id": 1806,
@@ -32139,7 +32044,7 @@
    "jenisJabatan": "Jabatan Pelaksana",
    "formasi": "YA",
    "kebutuhan": 5,
-   "bezetting": 3,
+   "bezetting": 2,
    "pegawai": [
     {
      "nama": "Yastin Sambeani",
@@ -32150,14 +32055,9 @@
      "nama": "Mardan",
      "nip": "197306062008122001",
      "status": "PNS"
-    },
-    {
-     "nama": "Mulhidayah",
-     "nip": "197112162025212003",
-     "status": "PPPK"
     }
    ],
-   "formasiGap": 2
+   "formasiGap": 3
   },
   {
    "id": 1833,
@@ -32242,20 +32142,25 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 9,
-   "bezetting": 2,
+   "bezetting": 3,
    "pegawai": [
     {
-     "nama": "Mohammad Eka Aditya, S.T.",
-     "nip": "199010122025061003",
+     "nama": "Rizky Deco Nugroho, S.T.",
+     "nip": "199212242022031008",
      "status": "PNS"
     },
     {
-     "nama": "Surtini, S.T.",
-     "nip": "198510212025212025",
+     "nama": "Rumantri, S.Ars.",
+     "nip": "199008232025211028",
+     "status": "PPPK"
+    },
+    {
+     "nama": "Siti Fatimah, S.T.",
+     "nip": "198805252025212050",
      "status": "PPPK"
     }
    ],
-   "formasiGap": 7
+   "formasiGap": 6
   },
   {
    "id": 1838,
@@ -32469,13 +32374,13 @@
    "bezetting": 2,
    "pegawai": [
     {
-     "nama": "Rumantri, S.Ars.",
-     "nip": "199008232025211028",
-     "status": "PPPK"
+     "nama": "Mohammad Eka Aditya, S.T.",
+     "nip": "199010122025061003",
+     "status": "PNS"
     },
     {
-     "nama": "Siti Fatimah, S.T.",
-     "nip": "198805252025212050",
+     "nama": "Surtini, S.T.",
+     "nip": "198510212025212025",
      "status": "PPPK"
     }
    ],
@@ -34952,15 +34857,9 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 6,
-   "bezetting": 1,
-   "pegawai": [
-    {
-     "nama": "Qyas Sandovid Akbar, A.Md.",
-     "nip": "199609252020121006",
-     "status": "PNS"
-    }
-   ],
-   "formasiGap": 5
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 6
   },
   {
    "id": 1988,
@@ -35145,9 +35044,15 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 5,
-   "bezetting": 0,
-   "pegawai": [],
-   "formasiGap": 5
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Qyas Sandovid Akbar, A.Md.",
+     "nip": "199609252020121006",
+     "status": "PNS"
+    }
+   ],
+   "formasiGap": 4
   },
   {
    "id": 1999,
@@ -38066,13 +37971,13 @@
      "status": "PNS"
     },
     {
-     "nama": "Raymondus Jordy Fallisco Otsinar, S.T.",
-     "nip": "200001052025061013",
+     "nama": "Pabangun Dwi Prihartono, S.T.",
+     "nip": "199802262025061004",
      "status": "PNS"
     },
     {
-     "nama": "Aminah Manaray, S.T.",
-     "nip": "199005262019032009",
+     "nama": "Ivan Martua Hutasoit, S.T",
+     "nip": "199711142025061010",
      "status": "PNS"
     }
    ],
@@ -38286,7 +38191,7 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "YA",
    "kebutuhan": 9,
-   "bezetting": 4,
+   "bezetting": 5,
    "pegawai": [
     {
      "nama": "Ariefani Nurhakim, S.T.",
@@ -38299,17 +38204,22 @@
      "status": "PPPK"
     },
     {
-     "nama": "Pabangun Dwi Prihartono, S.T.",
-     "nip": "199802262025061004",
+     "nama": "Yusuf Norman Leo, S.T",
+     "nip": "199505132025061005",
      "status": "PNS"
     },
     {
-     "nama": "Ivan Martua Hutasoit, S.T",
-     "nip": "199711142025061010",
+     "nama": "Raymondus Jordy Fallisco Otsinar, S.T.",
+     "nip": "200001052025061013",
+     "status": "PNS"
+    },
+    {
+     "nama": "Aminah Manaray, S.T.",
+     "nip": "199005262019032009",
      "status": "PNS"
     }
    ],
-   "formasiGap": 5
+   "formasiGap": 4
   },
   {
    "id": 2186,
@@ -38606,15 +38516,9 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "TIDAK",
    "kebutuhan": 0,
-   "bezetting": 1,
-   "pegawai": [
-    {
-     "nama": "Reno, S.T.",
-     "nip": "197502242007011005",
-     "status": "PNS"
-    }
-   ],
-   "formasiGap": -1
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 0
   },
   {
    "id": 2202,
@@ -38847,20 +38751,15 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "TIDAK",
    "kebutuhan": 0,
-   "bezetting": 2,
+   "bezetting": 1,
    "pegawai": [
     {
      "nama": "Rusli Supriatna, S.T., M.T.",
      "nip": "198402292014101001",
      "status": "PNS"
-    },
-    {
-     "nama": "Sri Wahyudi, S.T.",
-     "nip": "199002122014021002",
-     "status": "PNS"
     }
    ],
-   "formasiGap": -2
+   "formasiGap": -1
   },
   {
    "id": 2213,
@@ -39144,15 +39043,9 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "TIDAK",
    "kebutuhan": 0,
-   "bezetting": 1,
-   "pegawai": [
-    {
-     "nama": "Robby Paso, S.T.",
-     "nip": "198805102018021001",
-     "status": "PNS"
-    }
-   ],
-   "formasiGap": -1
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 0
   },
   {
    "id": 2225,
@@ -39400,9 +39293,15 @@
    "jenisJabatan": "Jabatan Lainnya",
    "formasi": "TIDAK",
    "kebutuhan": 0,
-   "bezetting": 0,
-   "pegawai": [],
-   "formasiGap": 0
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Yohanes Bagaskara Cahya Kusuma, S.Tr.T",
+     "nip": "199810302022031005",
+     "status": "PNS"
+    }
+   ],
+   "formasiGap": -1
   },
   {
    "id": 2236,
@@ -39415,15 +39314,9 @@
    "jenisJabatan": "Jabatan Lainnya",
    "formasi": "TIDAK",
    "kebutuhan": 0,
-   "bezetting": 1,
-   "pegawai": [
-    {
-     "nama": "Nico Saputra, S.T.",
-     "nip": "199712212022031004",
-     "status": "PNS"
-    }
-   ],
-   "formasiGap": -1
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 0
   },
   {
    "id": 2237,
@@ -39513,20 +39406,15 @@
    "jenisJabatan": "Jabatan Lainnya",
    "formasi": "TIDAK",
    "kebutuhan": 0,
-   "bezetting": 2,
+   "bezetting": 1,
    "pegawai": [
-    {
-     "nama": "Budi Alfiyanto, ST",
-     "nip": "197703182008121003",
-     "status": "PNS"
-    },
     {
      "nama": "Havid Suryo Husodo, S.T.",
      "nip": "199704222022031009",
      "status": "PNS"
     }
    ],
-   "formasiGap": -2
+   "formasiGap": -1
   },
   {
    "id": 2240,
@@ -39539,15 +39427,9 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "TIDAK",
    "kebutuhan": 0,
-   "bezetting": 1,
-   "pegawai": [
-    {
-     "nama": "Harits Kusuma Andaerri, S.T.",
-     "nip": "199412082022031007",
-     "status": "PNS"
-    }
-   ],
-   "formasiGap": -1
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 0
   },
   {
    "id": 2241,
@@ -40247,8 +40129,13 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "TIDAK",
    "kebutuhan": 0,
-   "bezetting": 2,
+   "bezetting": 3,
    "pegawai": [
+    {
+     "nama": "Sri Wahyudi, S.T.",
+     "nip": "199002122014021002",
+     "status": "PNS"
+    },
     {
      "nama": "Pradipta Kumara Prabandaru, S.T.",
      "nip": "199701222025061007",
@@ -40260,7 +40147,7 @@
      "status": "PNS"
     }
    ],
-   "formasiGap": -2
+   "formasiGap": -3
   },
   {
    "id": 2269,
@@ -41087,15 +40974,20 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "TIDAK",
    "kebutuhan": 0,
-   "bezetting": 1,
+   "bezetting": 2,
    "pegawai": [
     {
      "nama": "Ibnu Azka Ulinnuha, S.T.",
      "nip": "199906052025061008",
      "status": "PNS"
+    },
+    {
+     "nama": "Ivana Patricia Lilipaly, S.T.",
+     "nip": "199809192025062014",
+     "status": "PNS"
     }
    ],
-   "formasiGap": -1
+   "formasiGap": -2
   },
   {
    "id": 2299,
@@ -41243,15 +41135,9 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "TIDAK",
    "kebutuhan": 0,
-   "bezetting": 1,
-   "pegawai": [
-    {
-     "nama": "Munawir Arge Pratama Otolomo, S.T.",
-     "nip": "199609272025061010",
-     "status": "PNS"
-    }
-   ],
-   "formasiGap": -1
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 0
   },
   {
    "id": 2305,
@@ -41478,15 +41364,20 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "TIDAK",
    "kebutuhan": 0,
-   "bezetting": 1,
+   "bezetting": 2,
    "pegawai": [
+    {
+     "nama": "Munawir Arge Pratama Otolomo, S.T.",
+     "nip": "199609272025061010",
+     "status": "PNS"
+    },
     {
      "nama": "Natanael Christy Kalendesang, S.T",
      "nip": "200012252025061007",
      "status": "PNS"
     }
    ],
-   "formasiGap": -1
+   "formasiGap": -2
   },
   {
    "id": 2315,
@@ -41499,20 +41390,15 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "TIDAK",
    "kebutuhan": 0,
-   "bezetting": 2,
+   "bezetting": 1,
    "pegawai": [
     {
-     "nama": "Yusuf Norman Leo, S.T",
-     "nip": "199505132025061005",
-     "status": "PNS"
-    },
-    {
-     "nama": "Nida Amalia Solehah, S. Tr. T.",
-     "nip": "200104282025062011",
+     "nama": "Levana Humaira, S.Ars.",
+     "nip": "199611222018022001",
      "status": "PNS"
     }
    ],
-   "formasiGap": -2
+   "formasiGap": -1
   },
   {
    "id": 2316,
@@ -41677,7 +41563,7 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "TIDAK",
    "kebutuhan": 0,
-   "bezetting": 3,
+   "bezetting": 2,
    "pegawai": [
     {
      "nama": "Ilham Ubaidillah, S.E.",
@@ -41688,14 +41574,9 @@
      "nama": "Fajar Perdana Kasmana, S.H.",
      "nip": "199502162019031001",
      "status": "PNS"
-    },
-    {
-     "nama": "Ivana Patricia Lilipaly, S.T.",
-     "nip": "199809192025062014",
-     "status": "PNS"
     }
    ],
-   "formasiGap": -3
+   "formasiGap": -2
   },
   {
    "id": 2324,
@@ -41729,16 +41610,11 @@
    "jenisJabatan": "Jabatan Pelaksana",
    "formasi": "YA",
    "kebutuhan": 4,
-   "bezetting": 4,
+   "bezetting": 3,
    "pegawai": [
     {
      "nama": "Rd. Achmad Nugraha, SE",
      "nip": "197112052008121001",
-     "status": "PNS"
-    },
-    {
-     "nama": "Krisnaningrum, S.KOM",
-     "nip": "198303082010122004",
      "status": "PNS"
     },
     {
@@ -41752,7 +41628,7 @@
      "status": "PNS"
     }
    ],
-   "formasiGap": 0
+   "formasiGap": 1
   },
   {
    "id": 2326,
@@ -41938,15 +41814,20 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "TIDAK",
    "kebutuhan": 0,
-   "bezetting": 1,
+   "bezetting": 2,
    "pegawai": [
+    {
+     "nama": "Marlina, ST",
+     "nip": "197509222008122001",
+     "status": "PNS"
+    },
     {
      "nama": "Arinda Yudhit Bandripta, ST",
      "nip": "198503272010122001",
      "status": "PNS"
     }
    ],
-   "formasiGap": -1
+   "formasiGap": -2
   },
   {
    "id": 2335,
@@ -41980,15 +41861,9 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "TIDAK",
    "kebutuhan": 0,
-   "bezetting": 1,
-   "pegawai": [
-    {
-     "nama": "Nurul Aini Budiyanti, S.M.",
-     "nip": "199001252010122001",
-     "status": "PNS"
-    }
-   ],
-   "formasiGap": -1
+   "bezetting": 0,
+   "pegawai": [],
+   "formasiGap": 0
   },
   {
    "id": 2337,
@@ -42472,20 +42347,15 @@
    "jenisJabatan": "Jabatan Fungsional",
    "formasi": "TIDAK",
    "kebutuhan": 0,
-   "bezetting": 2,
+   "bezetting": 1,
    "pegawai": [
     {
      "nama": "Muhammad Wahyudi Fortuna, S.T.",
      "nip": "199807282022031005",
      "status": "PNS"
-    },
-    {
-     "nama": "Vidia Chandra Dewi, S.T.",
-     "nip": "199002032018022001",
-     "status": "PNS"
     }
    ],
-   "formasiGap": -2
+   "formasiGap": -1
   },
   {
    "id": 2360,
@@ -42782,10 +42652,73 @@
   },
   {
    "eselon": "",
-   "unitKerja": "BALAI PELAKSANAAN PRASARANA STRATEGIS PAPUA BARAT",
+   "unitKerja": "BALAI PELAKSANAAN PRASARANA STRATEGIS KEPULAUAN BANGKA BELITUNG",
    "satuanKerja": "-",
    "seksiKerja": "-",
-   "jabatan": "",
+   "jabatan": "Operator Layanan Operasional",
+   "jenjang": "-",
+   "jenisJabatan": "Jabatan Pelaksana",
+   "formasi": "TIDAK",
+   "kebutuhan": 0,
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Fery Yunardi",
+     "nip": "197102012006041009",
+     "status": "PNS"
+    }
+   ],
+   "id": 2373,
+   "formasiGap": -1
+  },
+  {
+   "eselon": "",
+   "unitKerja": "BALAI PELAKSANAAN PRASARANA STRATEGIS KEPULAUAN BANGKA BELITUNG",
+   "satuanKerja": "-",
+   "seksiKerja": "-",
+   "jabatan": "Pengelola Layanan Operasional",
+   "jenjang": "-",
+   "jenisJabatan": "Jabatan Pelaksana",
+   "formasi": "TIDAK",
+   "kebutuhan": 0,
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Indra Jaya, ST",
+     "nip": "197212022007011005",
+     "status": "PNS"
+    }
+   ],
+   "id": 2374,
+   "formasiGap": -1
+  },
+  {
+   "eselon": "",
+   "unitKerja": "BALAI PELAKSANAAN PRASARANA STRATEGIS KEPULAUAN BANGKA BELITUNG",
+   "satuanKerja": "-",
+   "seksiKerja": "-",
+   "jabatan": "Pengelola Pengadaan Barang/Jasa",
+   "jenjang": "Ahli Muda",
+   "jenisJabatan": "Jabatan Fungsional",
+   "formasi": "TIDAK",
+   "kebutuhan": 0,
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Reno, S.T.",
+     "nip": "197502242007011005",
+     "status": "PNS"
+    }
+   ],
+   "id": 2375,
+   "formasiGap": -1
+  },
+  {
+   "eselon": "",
+   "unitKerja": "SEKRETARIAT DIREKTORAT JENDERAL PRASARANA STRATEGIS",
+   "satuanKerja": "-",
+   "seksiKerja": "-",
+   "jabatan": "Karyasiswa Master dan Doktoral",
    "jenjang": "-",
    "jenisJabatan": "Jabatan Lainnya",
    "formasi": "TIDAK",
@@ -42793,12 +42726,256 @@
    "bezetting": 1,
    "pegawai": [
     {
-     "nama": "Yohanes Bagaskara Cahya Kusuma, S.Tr.T",
-     "nip": "199810302022031005",
+     "nama": "Budi Alfiyanto, ST",
+     "nip": "197703182008121003",
      "status": "PNS"
     }
    ],
-   "id": 2373,
+   "id": 2376,
+   "formasiGap": -1
+  },
+  {
+   "eselon": "",
+   "unitKerja": "BALAI PELAKSANAAN PRASARANA STRATEGIS KEPULAUAN BANGKA BELITUNG",
+   "satuanKerja": "-",
+   "seksiKerja": "-",
+   "jabatan": "Penata Kelola Bangunan Gedung dan Kawasan Permukiman",
+   "jenjang": "Ahli Madya",
+   "jenisJabatan": "Jabatan Fungsional",
+   "formasi": "TIDAK",
+   "kebutuhan": 0,
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Daru Suryaningwang, S.T., M.Sc.",
+     "nip": "198412022009121001",
+     "status": "PNS"
+    }
+   ],
+   "id": 2377,
+   "formasiGap": -1
+  },
+  {
+   "eselon": "",
+   "unitKerja": "BALAI PELAKSANAAN PRASARANA STRATEGIS KEPULAUAN BANGKA BELITUNG",
+   "satuanKerja": "-",
+   "seksiKerja": "-",
+   "jabatan": "Penata Kelola Bangunan Gedung dan Kawasan Permukiman",
+   "jenjang": "Ahli Muda",
+   "jenisJabatan": "Jabatan Fungsional",
+   "formasi": "TIDAK",
+   "kebutuhan": 0,
+   "bezetting": 3,
+   "pegawai": [
+    {
+     "nama": "Bujangga, S.T.",
+     "nip": "199211222018021001",
+     "status": "PNS"
+    },
+    {
+     "nama": "Wahyu Adi Sanjaya, S.Ars.",
+     "nip": "199510032019031006",
+     "status": "PNS"
+    },
+    {
+     "nama": "Yondy Septian, S.T.",
+     "nip": "198709072024211004",
+     "status": "PPPK"
+    }
+   ],
+   "id": 2378,
+   "formasiGap": -3
+  },
+  {
+   "eselon": "",
+   "unitKerja": "BALAI PELAKSANAAN PRASARANA STRATEGIS KEPULAUAN BANGKA BELITUNG",
+   "satuanKerja": "-",
+   "seksiKerja": "-",
+   "jabatan": "Pengelola Pengadaan Barang/Jasa",
+   "jenjang": "Ahli Pertama",
+   "jenisJabatan": "Jabatan Fungsional",
+   "formasi": "TIDAK",
+   "kebutuhan": 0,
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Robby Paso, S.T.",
+     "nip": "198805102018021001",
+     "status": "PNS"
+    }
+   ],
+   "id": 2379,
+   "formasiGap": -1
+  },
+  {
+   "eselon": "",
+   "unitKerja": "BALAI PELAKSANAAN PRASARANA STRATEGIS KEPULAUAN BANGKA BELITUNG",
+   "satuanKerja": "-",
+   "seksiKerja": "-",
+   "jabatan": "Karyasiswa Master dan Doktoral",
+   "jenjang": "-",
+   "jenisJabatan": "Jabatan Lainnya",
+   "formasi": "TIDAK",
+   "kebutuhan": 0,
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Nico Saputra, S.T.",
+     "nip": "199712212022031004",
+     "status": "PNS"
+    }
+   ],
+   "id": 2380,
+   "formasiGap": -1
+  },
+  {
+   "eselon": "",
+   "unitKerja": "BALAI PELAKSANAAN PRASARANA STRATEGIS KEPULAUAN BANGKA BELITUNG",
+   "satuanKerja": "-",
+   "seksiKerja": "-",
+   "jabatan": "Pengelola Sumber Daya Air",
+   "jenjang": "Ahli Pertama",
+   "jenisJabatan": "Jabatan Fungsional",
+   "formasi": "TIDAK",
+   "kebutuhan": 0,
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Harits Kusuma Andaerri, S.T.",
+     "nip": "199412082022031007",
+     "status": "PNS"
+    }
+   ],
+   "id": 2381,
+   "formasiGap": -1
+  },
+  {
+   "eselon": "",
+   "unitKerja": "BALAI PELAKSANAAN PRASARANA STRATEGIS KEPULAUAN BANGKA BELITUNG",
+   "satuanKerja": "-",
+   "seksiKerja": "-",
+   "jabatan": "Penata Kelola Bangunan Gedung dan Kawasan Permukiman",
+   "jenjang": "Ahli Pertama",
+   "jenisJabatan": "Jabatan Fungsional",
+   "formasi": "TIDAK",
+   "kebutuhan": 0,
+   "bezetting": 10,
+   "pegawai": [
+    {
+     "nama": "Irfan Muhammad Rosadi, S.T.",
+     "nip": "199712062025061011",
+     "status": "PNS"
+    },
+    {
+     "nama": "Muhammad Dzikrillah, S.Tr.T.",
+     "nip": "200112272025061006",
+     "status": "PNS"
+    },
+    {
+     "nama": "Dimas Triwibowo",
+     "nip": "199108292025061003",
+     "status": "PNS"
+    },
+    {
+     "nama": "Zuhdi Firdaus Saputro, S.PWK",
+     "nip": "200002212025061007",
+     "status": "PNS"
+    },
+    {
+     "nama": "Muhamad Fikri Burli, S.Tr.T",
+     "nip": "199909112025061010",
+     "status": "PNS"
+    },
+    {
+     "nama": "Rizal Bahtiar, S.ST",
+     "nip": "199507132025061007",
+     "status": "PNS"
+    },
+    {
+     "nama": "Rumantir, S.T.",
+     "nip": "198410242025211027",
+     "status": "PPPK"
+    },
+    {
+     "nama": "Deny Kurbani, S.T.",
+     "nip": "198409062025211032",
+     "status": "PPPK"
+    },
+    {
+     "nama": "Dini Pertiwi, S.Tr.T",
+     "nip": "199507162025062010",
+     "status": "PNS"
+    },
+    {
+     "nama": "Ellvis Saputri, B.QS.",
+     "nip": "199104252025062006",
+     "status": "PNS"
+    }
+   ],
+   "id": 2382,
+   "formasiGap": -10
+  },
+  {
+   "eselon": "",
+   "unitKerja": "SEKRETARIAT DIREKTORAT JENDERAL PRASARANA STRATEGIS",
+   "satuanKerja": "-",
+   "seksiKerja": "-",
+   "jabatan": "Penata Laksana Bangunan Gedung dan Kawasan Permukiman",
+   "jenjang": "Mahir",
+   "jenisJabatan": "Jabatan Fungsional",
+   "formasi": "TIDAK",
+   "kebutuhan": 0,
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Muhammad Naufal Rafif, A.Md.T.",
+     "nip": "199803262020121003",
+     "status": "PNS"
+    }
+   ],
+   "id": 2383,
+   "formasiGap": -1
+  },
+  {
+   "eselon": "",
+   "unitKerja": "BALAI PELAKSANAAN PRASARANA STRATEGIS JAWA BARAT",
+   "satuanKerja": "-",
+   "seksiKerja": "-",
+   "jabatan": "Pranata Keuangan APBN",
+   "jenjang": "Mahir",
+   "jenisJabatan": "Jabatan Fungsional",
+   "formasi": "TIDAK",
+   "kebutuhan": 0,
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Nurul Aini Budiyanti, S.M.",
+     "nip": "199001252010122001",
+     "status": "PNS"
+    }
+   ],
+   "id": 2384,
+   "formasiGap": -1
+  },
+  {
+   "eselon": "",
+   "unitKerja": "BALAI PELAKSANAAN PRASARANA STRATEGIS KEPULAUAN BANGKA BELITUNG",
+   "satuanKerja": "-",
+   "seksiKerja": "-",
+   "jabatan": "Arsiparis",
+   "jenjang": "Ahli Pertama",
+   "jenisJabatan": "Jabatan Fungsional",
+   "formasi": "TIDAK",
+   "kebutuhan": 0,
+   "bezetting": 1,
+   "pegawai": [
+    {
+     "nama": "Siska Ramanda Sari, S.M.",
+     "nip": "198705112024212005",
+     "status": "PPPK"
+    }
+   ],
+   "id": 2385,
    "formasiGap": -1
   }
  ]
